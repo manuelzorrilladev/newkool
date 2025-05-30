@@ -34,7 +34,7 @@ const socialsLinks = {
 <template>
     <a :href="`${socialsLinks[social].link}${currentUrl}`" target="_blank"
         class="text-md w-fit  flex items-center h-7 text-white bg-newkool-red border border-newkool-red duration-200  hover:bg-white hover:text-newkool-red rounded-md">
-        <font-awesome-icon :icon="['fab', socialsLinks[social].icon]" class="px-4 py-1 rounded-sm text-xl" />
+        <font-awesome-icon :icon="['fab', socialsLinks[social].icon]" class="px-4 py-1 rounded-xs text-xl" />
 
     </a>
 </template>

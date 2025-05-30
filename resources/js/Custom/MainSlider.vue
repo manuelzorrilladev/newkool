@@ -83,79 +83,87 @@ const checkSlider3 = (item) => {
                     <font-awesome-icon :icon="['fas', 'caret-left']"
                         class="text-3xl text-newkool-red hover:text-white duration-200 hover:bg-newkool-red p-3 rounded-lg" />
                 </div>
-                <div>
+                <div class="bg-newkool-red relative -z-10">
                     <img src="/assets/banner-images/banner-lavadora-white.png" alt="lavadora" class="hidden md:block">
                     <img src="/assets/banner-images/banner-lavadora-white-mobile.png" alt="lavadora"
                         class="block md:hidden w-full">
 
                 </div>
 
-                <!-- <div class="absolute w- duration-500" :class="checkSlider3(4)">
-                    <div class="absolute z-0 flex flex-col w-full h-full items-start justify-center left-20">
-                        <h2 class="text-gray-600 font-light text-5xl pl-2">Productos de última</h2>
-                        <h2 class="text-newkool-red text-8xl font-extrabold ">Generacíon</h2>
-                        <p class="w-1/3 text-gray-600 pl-2  mt-2">Con tecnología <strong>NO FROST</strong>, tus alimentos
-                            estarán hidratados y jugosos por más tiempo, refrigeracion que te brindará la tranquilidad que
-                            necesitas.</p>
-                        <PrimaryButton path="/" class="mt-10">
-                            VER MÁS
-                        </PrimaryButton>
+                    <div class="absolute w- duration-500" :class="checkSlider3(4)">
+                        <div class="absolute z-0 flex flex-col w-full h-full items-center md:items-start md:justify-center md:left-20 mt-10 md:mt-0">
+                            <h2 class="text-gray-600 font-light text-2xl md:text-4xl lg:text-5xl pl-2">Productos de última</h2>
+                            <h2 class="text-newkool-red text-5xl  md:text-7xl lg:text-8xl font-extrabold ">Generacíon</h2>
+                            <p class="w-1/3 text-gray-600 pl-2  mt-2 hidden md:block">Con tecnología <strong>NO FROST</strong>, tus alimentos
+                                estarán hidratados y jugosos por más tiempo, refrigeracion que te brindará la tranquilidad que
+                                necesitas.</p>
+                            <PrimaryButton path="/" class="mt-4 md:mt-10">
+                                VER MÁS
+                            </PrimaryButton>
+                        </div>
+                        <img src="/assets/banner-images/banner-nevera-white.png" alt="lavadora" class="hidden md:block">
+                        <img src="/assets/banner-images/banner-nevera-white-mobile.png" alt="lavadora" class="block md:hidden">
                     </div>
-                    <img src="/assets/banner-images/banner-nevera-white.png" alt="lavadora" class="hidden md:block">
-                    <img src="/assets/banner-images/banner-nevera-white-mobile.png" alt="lavadora" class="block md:hidden">
-                </div>
 
                 <div class="absolute w- duration-500" :class="checkSlider3(3)">
-                    <div class="absolute z-0 flex flex-col w-full h-full   items-center text-right justify-center right-20">
-                        <h2 class="text-gray-600 font-light text-4xl  w-1/3">Nuestras</h2>
-                        <h2 class="text-gray-700 text-8xl font-extrabold w-1/3">Lavadoras</h2>
-                        <p class="w-1/3 text-gray-600 text-xl text-right ">Dile adios a las manchas y hola a la frescura con
+                    <div class="absolute z-0 flex flex-col w-full h-full   items-center text-center md:text-right md:justify-center md:right-20 mt-5 md:mt-0">
+                        <h2 class="text-gray-600 font-light text-2xl md:text-4xl  md:w-1/3 ">Nuestras</h2>
+                        <h2 class="text-gray-700 text-[8vw] md:text-[6vw] font-extrabold md:w-1/3 leading-none">Lavadoras</h2>
+                        <p class="w-1/3 text-gray-600  text-md lg:text-xl text-right hidden md:block">Dile adios a las manchas y hola a la frescura con
                             nuestras lavadoras de alto rendimiento.</p>
-                        <div class="w-1/3 py-4 h-32 flex  flex-col justify-end items-center">
+                        <div class="w-1/3 md:py-4 md:h-32 flex  flex-col lg:justify-end items-center">
                             <Link path="/"
-                                class=" text-lg px-5 mt-4 rounded-xl bg-white text-neutral-600 border-neutral-600 hover:bg-newkool-red hover:text-white w-fit">
+                                class=" text-lg px-5 lg:mt-4 rounded-xl bg-white text-neutral-600 border-neutral-600 hover:bg-newkool-red hover:text-white w-fit">
                                 VER MÁS
                             </Link>
                         </div>
                     </div>
-                    <img src="/assets/banner-images/banner-lavadora-white.png" alt="contacto">
+                    <img src="/assets/banner-images/banner-lavadora-black.png" alt="contacto" class="hidden md:block">
+                    <img src="/assets/banner-images/banner-lavadora-black-mobile.png" alt="contacto" class="block md:hidden w-full">
+
+
+
                 </div>
 
                 <div class="absolute w-full duration-500" :class="checkSlider3(2)">
-                    <div class="absolute z-0 flex flex-col w-full h-full items-end justify-center right-20">
-                        <h2 class="text-gray-600 font-light text-5xl">Nuestras</h2>
-                        <h2 class="text-white text-8xl font-extrabold ">Neveras</h2>
-                        <p class="w-1/3 text-white text-xl text-right ">Tienen un diseño elegante y funcional, que
+                    <div class="absolute z-0 flex flex-col w-full h-full items-center md:items-end md:justify-center mt-5 md:mt-0 md:right-20">
+                        <h2 class="text-gray-600 font-light md:text-4xl lg:text-5xl">Nuestras</h2>
+                        <h2 class="text-white text-5xl  md:text-7xl lg:text-8xl font-extrabold ">Neveras</h2>
+                        <p class="w-1/3 text-white text-xl text-right hidden md:block">Tienen un diseño elegante y funcional, que
                             encajará a la perfección en tu cocina.</p>
-                        <PrimaryButton path="/" class="mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600">
+                        <PrimaryButton path="/" class="md:mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600">
                             VER MÁS
                         </PrimaryButton>
                     </div>
-                    <img src="/assets/banner-images/banner-nevera-black.png" alt="contacto">
+                         <img src="/assets/banner-images/banner-nevera-black.png" alt="contacto" class="hidden md:block">
+                    <img src="/assets/banner-images/banner-nevera-black-mobile.png" alt="contacto" class="block md:hidden w-full">
                 </div>
 
                 <div class="absolute w-full duration-500" :class="checkSlider3(1)">
-                    <div class="absolute z-0 flex flex-col w-full h-full items-center justify-center">
-                        <h2 class="text-newkool-red text-6xl font-extrabold my-4">Electrodomesticos</h2>
-                        <p class="w-1/3 text-gray-600 text-center">Que hacen de tu hogar un espacio acogedor y
+                    <div class="absolute z-0 flex flex-col w-full h-full items-center md:justify-center">
+                        <h2 class="text-newkool-red text-[8vw] md:text-[5vw] font-extrabold  mt-4 mb-0 md:mb-4">Electrodomesticos</h2>
+                        <p class="w-1/3 text-gray-600 text-center hidden md:block">Que hacen de tu hogar un espacio acogedor y
                             confortable, donde disfrutarás de momentos inolvidables con tu familia y amigos.
                         </p>
                         <PrimaryButton path="/">
                             CONTACTANOS
                         </PrimaryButton>
                     </div>
-                    <img src="/assets/banner-images/banner-marca-newkool.png" alt="neveras-newkool">
-                </div> -->
+                    <img src="/assets/banner-images/banner-marca-newkool.png" alt="neveras-newkool" class="hidden md:block">
+                    <img src="/assets/banner-images/banner-marca-newkool-mobile.png" alt="neveras-newkool" class="block md:hidden w-full">
+
+                    
+                </div>
 
                 <div class="absolute w-full  duration-500" :class="checkSlider3(0)">
-                    <div class="absolute z-0 flex flex-col w-full h-full items-end justify-center right-16">
-                        <h2 class="text-gray-600 font-light text-5xl">Hacemos de tu</h2>
-                        <h2 class="text-newkool-red text-8xl font-extrabold my-2">Hogar</h2>
-                        <h2 class="text-gray-600 font-light text-5xl">Tu lugar favorito</h2>
-                        <p class="w-1/3 text-gray-600 text-right  mt-2">Dile adios a las manchas y hola a la frescura
+                    <div class="absolute z-0 flex flex-col w-full h-full items-center md:items-end md:justify-center pt-4 md:pt-0 md:right-16">
+                        <h2 class="text-gray-600 font-light md:text-4xl lg:text-5xl">Hacemos de tu</h2>
+                        <h2 class="text-newkool-red text-3xl md:text-7xl lg:text-8xl font-extrabold md:my-2">Hogar</h2>
+                        <h2 class="text-gray-600 font-light md:text-4xl lg:text-5xl">Tu lugar favorito</h2>
+                        <p class="w-1/3 text-gray-600 text-right mt-2 hidden md:block">Dile adios a las manchas y hola a la frescura
                             con
                             nuestras lavadoras de alto rendimiento</p>
-                        <PrimaryButton path="/" class="mt-5">
+                        <PrimaryButton path="/" class="md:mt-5">
                             VER MÁS
                         </PrimaryButton>
                     </div>
