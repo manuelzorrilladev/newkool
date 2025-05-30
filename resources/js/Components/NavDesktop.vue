@@ -15,13 +15,8 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
         <div class=" flex  justify-between items-center w-fit gap-3 py-0">
             <Link :href="'/somos-newkool'"
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
-            Somos
-            Newkool</Link>
-            <Link :href="'/donde-encontrarnos'"
-                class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
-            Dónde
-            Encontrarnos</Link>
-
+          ¿Quiénes somos?</Link>
+           
             
 
 
@@ -31,15 +26,17 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
                 Productos</Link>
 
                 <div
-                    class="text-center hidden hover:flex group-hover:flex flex-col border absolute top-10 bg-neutral-200 -right-2 rounded-md">
-                    <Link :href="'/linea-blanca/Refrigeracion'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
-                    Refrigeración</Link>
+                    class="text-center hidden hover:flex group-hover:flex flex-col border absolute top-10 bg-neutral-200  rounded-md">
                     <Link :href="'/linea-blanca/Lavadoras'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
                     Lavadoras</Link>
+                    <Link :href="'/linea-blanca/Refrigeracion'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
+                    Neveras</Link>
                     <Link :href="'/linea-blanca/Congeladores'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
-                    Congeladores</Link>
+                    Aires Comerciales</Link>
                     <Link :href="'/linea-blanca/Vitrina'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
-                    Vitrina</Link>
+                    Aires Residenciales</Link>
+                    <Link :href="'/linea-blanca/Vitrina'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
+                    Dispensadores de Agua</Link>
                 </div>
             </div>
 
@@ -48,6 +45,10 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
             <Link :href="'/contacto'"
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
             Contacto
+            </Link>
+            <Link :href="'/contacto'"
+                class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
+            Servicio Técnico
             </Link>
         </div>
     </div>

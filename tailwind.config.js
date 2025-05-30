@@ -20,7 +20,8 @@ export default {
             },
             colors: {
                 'newkool-red': "#E21F1D",
-                // 'newkool-red': "#752d2c",
+                // 'newkool-red': "#E21F1D",
+                'newkool-red': "#752d2c",
                 'custom': "rgba(134, 32, 33, 0.20)",
             },
            

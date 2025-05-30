@@ -40,10 +40,7 @@
 
 
                 </a>
-                <a href="https://twitter.com/NewkoolAmerica" target="_blank">
-                    <font-awesome-icon :icon="['fab', 'x-twitter']" class="text-2xl text-white hover:text-gray-300" />
-
-                </a>
+             
             </div>
         </div>
     </footer>

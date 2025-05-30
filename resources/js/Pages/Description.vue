@@ -51,7 +51,6 @@ function getTableContent(item, char) {
                              <h2 class="font-bold text-center relative z-10">Compartir en:</h2>
                             <div class="flex flex-col md:flex-row justify-center items-center gap-4 mt-2 relative z-20">
                                 <ShareSocialsButton social="facebook" />
-                                <ShareSocialsButton social="x" />
                                 <ShareSocialsButton social="pinterest" />
                             </div>
                     </div>
