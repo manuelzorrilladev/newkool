@@ -1,6 +1,7 @@
 <script setup>
 import Navbar from '../Custom/Navbar.vue';
 import Footer from '../Custom/Footer.vue';
+import ChatBot from '../Custom/ChatBot.vue';
 
 
 </script>
@@ -10,7 +11,7 @@ import Footer from '../Custom/Footer.vue';
         <Navbar/>
         <slot></slot>
         <Footer/> 
-        
+        <ChatBot/>
     </main>
 </template>
 

@@ -17,6 +17,22 @@
 
   --color-newkool-red: #752d2c;
   --color-custom: rgba(134, 32, 33, 0.2);
+
+  --animate-appear: appear 1s ease-in-out;
+  --animate-disappear: appear 1s ease-in-out reverse;
+
+  @keyframes appear{
+      0%,
+       {
+        transform: translateY(30px);
+        opacity:0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity:1;
+      }
+    }
+
 }
 
 /*

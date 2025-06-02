@@ -31,11 +31,11 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
                     Lavadoras</Link>
                     <Link :href="'/linea-blanca/Refrigeracion'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
                     Neveras</Link>
-                    <Link :href="'/linea-blanca/Congeladores'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
+                    <Link :href="'#'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200 ">
                     Aires Comerciales</Link>
-                    <Link :href="'/linea-blanca/Vitrina'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
+                    <Link :href="'#'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
                     Aires Residenciales</Link>
-                    <Link :href="'/linea-blanca/Vitrina'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
+                    <Link :href="'#'" class="whitespace-nowrap px-8 py-2 hover:underline  duration-200">
                     Dispensadores de Agua</Link>
                 </div>
             </div>
@@ -46,13 +46,17 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
             Contacto
             </Link>
-            <Link :href="'/contacto'"
+            <Link :href="'/servicio-tecnico'"
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
             Servicio Técnico
             </Link>
         </div>
-    </div>
 
+        
+    </div>
+    <div class="flex items-center justify-center">
+        <hr class="border-black w-11/12">
+    </div>
 </template>
 
 <style scoped></style>

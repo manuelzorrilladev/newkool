@@ -29,6 +29,11 @@ Route::get('/', function () {
 Route::get('/somos-newkool',function(){
     return Inertia::render('About') ;
 });
+
+
+Route::get('/servicio-tecnico',function(){
+    return Inertia::render('Service') ;
+});
  
 Route::get('/donde-encontrarnos', [NewkoolUbicationsController::class, 'index']);
 
