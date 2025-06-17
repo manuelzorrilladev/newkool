@@ -318,7 +318,7 @@ function updateBlink(type) {
                         <p class="w-1/3 text-gray-600 pl-2  mt-2">Con tecnología <strong>NO FROST</strong>, tus alimentos
                             estarán hidratados y jugosos por más tiempo, refrigeracion que te brindará la tranquilidad que
                             necesitas.</p>
-                        <PrimaryButton path="/" class="mt-10">
+                        <PrimaryButton path="/productos" class="mt-10">
                             VER MÁS
                         </PrimaryButton>
                     </div>
@@ -332,7 +332,7 @@ function updateBlink(type) {
                         <p class="w-1/3 text-gray-600 text-xl text-right ">Dile adios a las manchas y hola a la frescura con
                             nuestras lavadoras de alto rendimiento.</p>
                         <div class="w-1/3 py-4 h-32 flex  flex-col justify-end items-center">
-                            <Link path="/"
+                            <Link href="/linea-blanca/Lavadoras"
                                 class=" text-lg px-5 mt-4 rounded-xl bg-white text-neutral-600 border-neutral-600 hover:bg-newkool-red hover:text-white w-fit">
                                 VER MÁS
                             </Link>
@@ -347,7 +347,7 @@ function updateBlink(type) {
                         <h2 class="text-white text-8xl font-extrabold ">Neveras</h2>
                         <p class="w-1/3 text-white text-xl text-right ">Tienen un diseño elegante y funcional, que
                             encajará a la perfección en tu cocina.</p>
-                        <PrimaryButton path="/" class="mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600">
+                        <PrimaryButton path="/linea-blanca/Refrigeracion" class="mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600">
                             VER MÁS
                         </PrimaryButton>
                     </div>
@@ -360,9 +360,9 @@ function updateBlink(type) {
                         <p class="w-1/3 text-gray-600 text-center">Que hacen de tu hogar un espacio acogedor y
                             confortable, donde disfrutarás de momentos inolvidables con tu familia y amigos.
                         </p>
-                        <PrimaryButton path="/">
-                            CONTACTANOS
-                        </PrimaryButton>
+                        <a href="https://wa.me/+584148811719" target="_blank" class="text-sm md:text-lg px-5 mt-4  border-newkool-red border bg-newkool-red text-white hover:text-newkool-red hover:bg-white duration-300 rounded-3xl uppercase"  >
+                            Contáctanos
+                        </a>
                     </div>
                     <img class="2xl:w-[200vw]" src="/assets/banner-images/banner-marca-newkool.png" alt="neveras-newkool">
                 </div>
@@ -374,7 +374,7 @@ function updateBlink(type) {
                         <h2 class="text-gray-600 font-light text-5xl">Tu lugar favorito</h2>
                         <p class="w-1/3 text-gray-600 text-right  mt-2">Dile adios a las manchas y hola a la frescura con
                             nuestras lavadoras de alto rendimiento</p>
-                        <PrimaryButton path="/" class="mt-5">
+                        <PrimaryButton path="/linea-blanca/Lavadoras" class="mt-5">
                             VER MÁS
                         </PrimaryButton>
                     </div>
