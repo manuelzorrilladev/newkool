@@ -41,31 +41,31 @@ function submit() {
             {{ message }}
         </div>
 
-        <section class="relative container w-full">
-            <div class="w-full h-full bg-gradient-to-r from-newkool-red/20 to-newkool-red/70 absolute z-10">
+        <section class="absolute containerBox w-full z-0">
+            <div class="w-full h-full bg-gradient-to-r from-newkool-red/20 to-newkool-red/70 absolute">
 
             </div>
             <div class="w-full h-[90vh] md:h-[50vw]">
-  <img src="/assets/route-images/contacto-desktop.png" alt="contacto-banner" class="hidden md:block">
-            <img src="/assets/route-images/contacto-mobile.png" alt="contacto-banner" class="block md:hidden">
+                <img src="/assets/route-images/contacto-desktop.png" alt="contacto-banner" class="hidden md:block">
+                <img src="/assets/route-images/contacto-mobile.png" alt="contacto-banner" class="block md:hidden">
             </div>
 
         </section>
-        <div class="block h-[800px] md:h-[450px]">
 
-        </div>
 
-        <div class="flex justify-center w-full pb-10 absolute top-[40%] md:top-9/12">
+        <div class="flex justify-center w-full pb-10 relative z-10 mt-[30vw]">
             <section class="w-[85%] rounded-xl shadow-lg border-2 bg-gray-100 flex flex-col md:flex-row items-center">
-                <div class="w-11/12 md:w-2/5 pt-5 md:pt-0 flex items-center justify-center  h-full">
-                    <div class="rounded-xl bg-newkool-red h-full md:h-[90%] w-full md:w-[82%] text-white flex flex-col justify-center gap-4 pb-4 md:pb-0">
-                        <h2 class=" text-3xl md:text-5xl tracking-tight font-extrabold pt-6 pl-5  ">
+                <div class="w-11/12 lg:w-3/5 xl:w-2/5 pt-5 md:pt-0 flex items-center justify-center  h-full">
+                    <div
+                        class="rounded-xl bg-newkool-red h-full md:h-[90%] w-full md:w-[82%] text-white flex flex-col justify-center gap-4 pb-4 md:pb-0">
+                        <h2 class=" text-3xl xl:text-5xl tracking-tight font-extrabold pt-6 pl-5  ">
                             Contáctanos
                         </h2>
-                        <p class=" font-light text-justify  md:text-lg w-10/12 pl-5 ">Envíanos tu mensaje
-                            Para atención al cliente, puedes escribir a atencionalcliente@newkoolamerica.com o comunicarte al número de WhatsApp +584148811719.
+                        <p class=" font-light text-justify lg:text-sm  xl:text-lg w-10/12 pl-5 ">Envíanos tu mensaje
+                            Para atención al cliente, puedes escribir a atencionalcliente@ewkoolamerica.com o
+                            comunicarte al número de WhatsApp +584148811719.
                         </p>
-                        <p class=" lg:mb-16 font-light text-justify  md:text-lg w-10/12 pl-5 ">
+                        <p class=" lg:mb-16 font-light text-justify lg:text-sm  xl:text-lg w-10/12 pl-5 ">
                             Estamos ubicados en Caracas, Venezuela.
                         </p>
 
@@ -140,7 +140,7 @@ function submit() {
 
 
 <style scoped>
-.container {
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 90%);
+.containerBox {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 </style>

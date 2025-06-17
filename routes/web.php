@@ -41,9 +41,10 @@ Route::get('/donde-encontrarnos', [NewkoolUbicationsController::class, 'index'])
 Route::get('/donde-encontrarnos/{id}', [NewkoolUbicationsController::class, 'details']);
 
 
-Route::get('/productos', [NewkoolProductsController::class, 'getAll']);
+Route::get('/linea-blanca', [NewkoolProductsController::class, 'getAll']);
 
 Route::get('/linea-blanca/{name}', [NewkoolProductsController::class, 'getByType']);
+Route::get('/linea-blanca/{name}/{type}', [NewkoolProductsController::class, 'getByTypeTag']);
 
 Route::get('/productos/{name}', [NewkoolProductsController::class, 'getDescription']);
 

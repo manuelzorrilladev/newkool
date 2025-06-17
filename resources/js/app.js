@@ -34,7 +34,14 @@ import {
     faArrowLeft,
     faArrowRight,
     faGear,
-    faPaperPlane
+    faPaperPlane,
+    faEllipsisVertical,
+    faBars,
+    faChevronLeft,
+    faChevronRight,
+    faChevronUp,
+    faChevronDown,
+    faCircleXmark
 
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faXTwitter, faWhatsapp,faPinterest  } from '@fortawesome/free-brands-svg-icons'
@@ -63,7 +70,14 @@ library.add(
     faArrowLeft,
     faArrowRight, faPinterest,
     faGear,
-    faPaperPlane
+    faPaperPlane,
+    faEllipsisVertical,
+    faBars,
+    faChevronLeft,
+    faChevronRight,
+    faChevronUp,
+    faChevronDown,
+    faCircleXmark
 )
 
 

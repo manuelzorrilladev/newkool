@@ -20,7 +20,7 @@
 
   --animate-appear: appear 1s ease-in-out;
   --animate-disappear: appear 1s ease-in-out reverse;
-
+  
   @keyframes appear{
       0%,
        {

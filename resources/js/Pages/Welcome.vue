@@ -5,19 +5,30 @@ import MainTemplate from '../Layouts/MainTemplate.vue';
 
 import MainSlider from '../Custom/MainSlider.vue';
 import MainCard from '../Custom/MainCard.vue';
+import ProductsSlider from '../Custom/ProductsSlider.vue';
+import ProductSVG from '../Custom/ProductSVG.vue';
+import MapBanner from '../Custom/MapBanner.vue';
 import PrimaryButton from '../Components/PrimaryButton.vue'
-
+import { useElementVisibility } from '@vueuse/core';
+import { ref, useTemplateRef, watch } from 'vue';
+const target = useTemplateRef('target')
+const targetIsVisible = useElementVisibility(target)
 defineProps({
     canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
 });
+
+
+
+
+
 </script>
 
 <template>
-    <MainTemplate >
-
+    <MainTemplate>
+    
         <Head>
             <title>Newkool America</title>
             <meta name="description" content="Newkoolamerica.com">
@@ -25,10 +36,17 @@ defineProps({
 
 
         <MainSlider class=""/>
-        <h2 class="text-center text-gray-600 mt-10 font-bold text-4xl ">Productos</h2>
-        <div class="h-fit flex flex-col gap-10 md:gap-0 md:flex-row justify-evenly items-center my-16">
-            <MainCard title="refrigeracion" />
-            <MainCard title="lavado" />
+        
+        <div class="h-[550px] border" ref="target">
+            <h2 class="text-center text-gray-600 mt-10 font-bold text-4xl " >Productos</h2>
+            <div class="h-fit flex flex-col gap-10 md:gap-0 md:flex-row justify-evenly items-center my-16">
+                <Transition name="fade">
+                    <ProductsSlider v-if="targetIsVisible" />
+    
+                </Transition>
+           
+            </div>
+
         </div>
 
 
@@ -36,20 +54,7 @@ defineProps({
             <hr class="border-black w-11/12">
         </div>
         
-        
-        <div class="flex flex-col md:flex-row items-center justify-center h-fit py-36 gap-8">
-            <img class="w-2/3 md:w-1/3" src="/assets/route-images/home/mapa-completo.png" alt="mapa-de-venezuela">
-            <header class="h-fit flex flex-col items-center" >
-                <h2 class="my-4 text-3xl text-center text-newkool-red">
-                    Conoce los estados <br> donde puedes adquirir <br>
-                    <strong >nuestros productos.</strong>
-                </h2> 
-                <PrimaryButton path="/" class="ml-4 w-fit">
-                    Ver más
-                </PrimaryButton>
-            </header>
-        </div>
-        
+  
         <div class="flex justify-center">
             <hr class="border-black w-11/12">
         </div>
@@ -71,5 +76,17 @@ defineProps({
     .dark\:bg-dots-lighter {
         background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
     }
+}
+
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

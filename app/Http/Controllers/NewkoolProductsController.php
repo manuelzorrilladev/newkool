@@ -25,6 +25,17 @@ class NewkoolProductsController extends Controller
             
         ]);
     }
+    public function getByTypeTag($name,$type){
+        $products = DB::table('newkool_products')->where('tag',$name)->select('id','code','type','name')->get();
+        
+        return Inertia::render('Products',[
+            'products' => $products,
+            'name'=> $name,
+            'type'=>$type
+            
+        ]);
+    }
+  
     public function getDescription($name){
         $product = DB::table('newkool_products')->where('name', '=' , $name)->get();
         $slider = DB::table('newkool_products')->get()->take(6)->random(6);

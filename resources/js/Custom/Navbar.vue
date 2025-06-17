@@ -6,7 +6,7 @@ import NavMobile from '../Components/NavMobile.vue'
 </script>
 
 <template>
-    <nav class="relative  z-40 bg-white">
+    <nav class="relative  z-[100] bg-white">
         <NavDesktop />
         <NavMobile />
         <div class="flex justify-center md:hidden h-24">

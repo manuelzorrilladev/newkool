@@ -1,12 +1,8 @@
 <script setup>
-import { Head, usePage,Link } from '@inertiajs/vue3';
+import { Head, usePage, Link,router } from '@inertiajs/vue3';
 
 import { ref } from 'vue';
 import MainTemplate from '../Layouts/MainTemplate.vue';
-
-
-
-
 const currentPage = ref(1)
 const totalPages = ref(1)
 const countPerPage = ref(12)
@@ -15,9 +11,11 @@ totalPages.value = Math.ceil(usePage().props.products.length / countPerPage.valu
 const productsInPage = ref(usePage().props.products)
 
 const name = usePage().props.name
+const type = usePage().props.type
 
 
-console.log(name)
+console.log(router);
+console.log(usePage().props)
 
 function setShow(item) {
     if (
@@ -49,6 +47,9 @@ function pageHandler(page) {
     }
 }
 
+function replaceLine(string){
+    return string.replaceAll("-"," ")
+}
 </script>
 
 <template>
@@ -58,27 +59,40 @@ function pageHandler(page) {
             <title>Productos</title>
             <meta name="description" content="Newkoolamerica.com">
         </Head>
+        <div class="relative -top-14 overflow-hidden h-[30vw]">
+            <div>
+                <img :src="`/assets/banner-images/banner-${name.toLowerCase()}-desktop.png`" alt=""
+                    class="hidden md:block">
+                <img :src="`/assets/banner-images/banner-${name.toLowerCase()}-mobile.png`" alt=""
+                    class="block md:hidden w-full">
+
+            </div>
+            <div class="absolute top-0 left-0 w-full h-full bg-newkool-red/20">
+
+            </div>
+        </div>
 
         <section class="min-h-screen">
-            <div>
-                <h2 class="font-bold text-4xl pt-8 text-newkool-red text-center">{{ name }}</h2>
-              
-            </div>
 
             <div class="flex items-center justify-center flex-col pb-8 ">
-                <!-- {{ productsInPage }} -->
+                <div class="text-3xl md:text-5xl font-bold text-newkool-red">
+                    {{ replaceLine(name)}}
+                </div>
+                <div v-if="type" class="text-xl md:text-5xl font-bold text-newkool-red uppercase">
+                    {{ replaceLine(type)}}
+                </div>
 
-                <div
+                <div v-if="productsInPage.length > 0"
                     class="grid rounded-lg bg-white my-8 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center place-content-center gap-2 w-fit">
-                    <div v-for="(item,index) in productsInPage" :key="index">
-                        <div v-if="setShow(index+1)"
+                    <div v-for="(item, index) in productsInPage" :key="index">
+                        <div v-if="setShow(index + 1)"
                             class="h-fit py-10 w-72 flex flex-col items-center border border-white rounded-md hover:border-newkool-red px-10 group duration-200 ">
                             <img :src="`/assets/products-images/${item.code}.jpg`" :alt="item.type"
                                 class="w-44 min-w-44 group-hover:scale-110 duration-200">
                             <h2 class="relative z-10 text-center text-sm font-light">{{ item.name }}</h2>
                             <Link :href="`/productos/${item.name}`"
                                 class=" text-lg px-5 mt-4  border-newkool-red border bg-newkool-red text-white hover:text-newkool-red hover:bg-white duration-300 rounded-3xl ">
-                                Ver más
+                            Ver más
                             </Link>
                         </div>
 
@@ -86,21 +100,37 @@ function pageHandler(page) {
 
                     </div>
                 </div>
+                <div v-else class=" h-screen w-full flex items-center justify-center">
+                    <header class="flex flex-col items-center text-newkool-red gap-6">
+                        <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-9xl"/>
+                        <h2 class="font-bold text-2xl md:text-5xl text-center">No hay productos que encajen con tu busqueda</h2>
+                        <Link href="/linea-blanca" class=" text-white bg-newkool-red cursor-pointer border border-newkool-red duration-200 hover:text-newkool-red hover:bg-white  rounded text-2xl py-3 px-6">
+                            Volver 
+                        </Link>
+                    </header>
+                </div>
 
                 <div class="flex items-center gap-4">
-                    <font-awesome-icon :icon="['fas', 'arrow-left']"
-                        class="text-black hover:text-newkool-red duration-200 cursor-pointer " @click="pageHandler(-1)" />
-                    <p>Page {{ currentPage }}/{{ totalPages }}</p>
-                    <font-awesome-icon :icon="['fas', 'arrow-right']"
-                        class="text-black hover:text-newkool-red duration-200 cursor-pointer " @click="pageHandler(1)" />
+                    <font-awesome-icon :icon="['fas', 'chevron-left']"
+                        class="text-black hover:text-newkool-red duration-200 cursor-pointer "
+                        @click="pageHandler(-1)" />
+                    <p>{{ currentPage }}/{{ totalPages }}</p>
+                    <font-awesome-icon :icon="['fas', 'chevron-right']"
+                        class="text-black hover:text-newkool-red duration-200 cursor-pointer "
+                        @click="pageHandler(1)" />
 
                 </div>
             </div>
         </section>
 
+        <div class="  overflow-hidden h-[20vw] flex items-center justify-center relative">
+
+            <img src="/assets/banner-images/banner-fondo-productos-desktop.png" alt="" class="hidden md:block">
+            <img src="/assets/banner-images/banner-fondo-productos-mobile.png" alt="" class="block md:hidden w-full">
+        </div>
+
 
     </MainTemplate>
 </template>
 
-
-
+<style scoped></style>

@@ -129,7 +129,7 @@ onMounted(() => {
 
                             <PrimaryButton
                                 :class="nestedValidator >= 4 ? 'opacity-100 -translate-y-6' : 'opacity-0 translate-y-0'"
-                                path="/" class="mt-4 md:mt-10 duration-300 ">VER MÁS
+                                path="/productos" class="mt-4 md:mt-10 duration-300 ">VER MÁS
                             </PrimaryButton>
                         </div>
 
@@ -160,7 +160,7 @@ onMounted(() => {
                             <div class="md:w-1/3 md:py-4 md:h-32 flex  flex-col items-end">
                                 <Link
                                     :class="nestedValidator >= 4 ? 'opacity-100 -translate-y-6' : 'opacity-0 translate-y-0'"
-                                    path="/"
+                                    href="/linea-blanca/Lavadoras"
                                     class=" text-lg px-5  rounded-xl bg-white text-neutral-600 border-neutral-600 hover:bg-newkool-red hover:text-white duration-300 ">
                                 VER MÁS</Link>
                             </div>
@@ -195,7 +195,7 @@ onMounted(() => {
 
                             <PrimaryButton
                                 :class="nestedValidator >= 4 ? 'opacity-100 -translate-y-6' : 'opacity-0 translate-y-0'"
-                                path="/" class="md:mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600 duration-200">
+                                path="/linea-blanca/Refrigeracion" class="md:mt-5 bg-[#d2bca6] text-neutral-600 border-neutral-600 duration-200">
                                 VER MÁS
                             </PrimaryButton>
                         </div>
@@ -221,9 +221,9 @@ onMounted(() => {
                                 Que hacen de tu hogar un espacio acogedor y confortable, donde disfrutarás de
                                 momentos inolvidables con tu familia y amigos.</p>
 
-                            <PrimaryButton
+                            <a href="https://wa.me/+584148811721" target="_blank"
                                 :class="nestedValidator >= 3 ? 'opacity-100 -translate-y-6' : 'opacity-0 translate-y-0'"
-                                path="/" class="duration-300 ">CONTACTANOS</PrimaryButton>
+                                 class="duration-300 text-lg px-5 md:mt-4  border-newkool-red border bg-newkool-red text-white hover:text-newkool-red hover:bg-white  rounded-3xl">CONTACTANOS</a href="">
                         </div>
 
                     </Transition>
@@ -260,7 +260,7 @@ onMounted(() => {
 
                             <PrimaryButton
                                 :class="nestedValidator >= 5 ? 'opacity-100 -translate-y-6' : 'opacity-0 translate-y-0'"
-                                path="/" class="md:mt-5 nested5 duration-300 ">VER MÁS
+                                path="/linea-blanca/Lavadoras" class="md:mt-5 nested5 duration-300 ">VER MÁS
                             </PrimaryButton>
                         </div>
                     </Transition>
