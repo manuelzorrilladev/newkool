@@ -52,17 +52,19 @@ onClickOutside(target2, event => activateSection(-1))
 
 
                     </Link>
-                    <Link href="/linea-blanca/Audio"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(2)">
-                    <h2>
-                        Audio
 
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                    <div>
+
+                        <Link href="/linea-blanca/Audio"
+                            class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline ">
+                        <h2>
+                            Audio
+
+                        </h2>
 
 
-                    </Link>
+                        </Link>
+                    </div>
 
                     <div class="py-2">
 
@@ -98,13 +100,12 @@ onClickOutside(target2, event => activateSection(-1))
 
 
                     <Link href="/linea-blanca/Dispensadores/"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(7)">
+                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline ">
                     <h2>
                         Dispensadores
 
                     </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                    <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
 
 
                     </Link>
@@ -156,24 +157,32 @@ onClickOutside(target2, event => activateSection(-1))
 
                     <div class="py-2">
 
-                        <Link @mouseover="activateSection(0)" :href="'/linea-blanca/Topes'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2 hover:underline  duration-200 h-10  w-full">
-                        Topes</Link>
+                        <Link @mouseover="activateSection(7)" :href="'/linea-blanca/Topes'"
+                            class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline">
+
+                        <h2>
+                            Topes
+
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+
+                        </Link>
                     </div>
 
 
 
-                    <Link href="/linea-blanca/TV-y-audio"
+                    <Link href="/linea-blanca/Televisores"
                         class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
                         @mouseover="activateSection(3)">
                     <h2>
-                        TV y Audio
-
+                        Televisores
                     </h2>
                     <font-awesome-icon :icon="['fas', 'chevron-right']" />
 
 
                     </Link>
+
+                   
 
 
 
@@ -217,7 +226,7 @@ onClickOutside(target2, event => activateSection(-1))
                     </div>
 
 
-                    <div v-if="section == 2" ref="target"
+                    <!-- <div v-if="section == 2" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-32 left-10 flex flex-col">
                         <Link :href="'/linea-blanca/Audio/torre-de-sonido'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
@@ -229,23 +238,21 @@ onClickOutside(target2, event => activateSection(-1))
                         </Link>
 
 
-                    </div>
+                    </div> -->
+
 
 
                     <div v-if="section == 3" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[650px] left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/TV-y-audio/32-pulgadas'"
+                        <Link :href="'/linea-blanca/Televisores/bases-Televisores'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        32"
+                        Bases para Televisores
                         </Link>
-                        <Link :href="'/linea-blanca/TV-y-audio/43-pulgadas'"
+                        <Link :href="'/linea-blanca/Televisores'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        43"
+                        Televisores
                         </Link>
-                        <Link :href="'/linea-blanca/TV-y-audio/50-pulgadas'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        50"
-                        </Link>
+
 
 
                     </div>
@@ -320,7 +327,7 @@ onClickOutside(target2, event => activateSection(-1))
                     </div>
 
 
-                    <div v-if="section == 7" ref="target"
+                    <!-- <div v-if="section == 10" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[320px] left-10 flex flex-col">
                         <Link :href="'/linea-blanca/Dispensadores/carga-superior'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
@@ -334,14 +341,35 @@ onClickOutside(target2, event => activateSection(-1))
 
 
 
-                    </div>
+                    </div> -->
+                    <div v-if="section == 7" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[600px] left-10 flex flex-col">
+                        <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Cocinas a Gas
 
+                        </Link>
+                        <Link :href="'/linea-blanca/Cocinas/cocina-electrica'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Cocinas eléctricas
+
+                        </Link>
+
+
+
+
+                    </div>
 
                     <div v-if="section == 8" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-56 left-10 flex flex-col">
                         <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Cocinas a Gas
+
+                        </Link>
+                        <Link :href="'/linea-blanca/Cocinas/cocina-electrica'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Cocinas eléctricas
 
                         </Link>
 

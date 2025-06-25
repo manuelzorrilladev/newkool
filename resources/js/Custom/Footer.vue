@@ -16,8 +16,7 @@
                 <font-awesome-icon :icon="['fas', 'phone']" class="text-2xl fill-white" />
 
                 <p>
-                    <a href="https://wa.me/584148811719" target="_blank"
-                        class="hover:text-gray-300 hover:underline">+584148811719</a>/
+                 
                     <a href="https://wa.me/584148811721" target="_blank"
                         class="hover:text-gray-300 hover:underline">+584148811721</a>
                 </p>

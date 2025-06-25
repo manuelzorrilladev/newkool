@@ -61,11 +61,12 @@ function submit() {
                         <h2 class=" text-3xl xl:text-5xl tracking-tight font-extrabold pt-6 pl-5  ">
                             Contáctanos
                         </h2>
-                        <p class=" font-light text-justify lg:text-sm  xl:text-lg w-10/12 pl-5 ">Envíanos tu mensaje
-                            Para atención al cliente, puedes escribir a atencionalcliente@ewkoolamerica.com o
-                            comunicarte al número de WhatsApp +584148811719.
+                        <p class=" font-light text-justify lg:text-sm  xl:text-lg w-11/12 pl-5 ">
+                            Para atención al cliente, puedes escribir a atencionalcliente@newkoolamerica.com <br> o
+                            comunicarte al número de WhatsApp 
                         </p>
-                        <p class=" lg:mb-16 font-light text-justify lg:text-sm  xl:text-lg w-10/12 pl-5 ">
+                        <a href="https://api.whatsapp.com/send?phone=584148811721&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." target="_blank" class="hover:underline pl-5 w-11/12">+584148811721.</a>
+                        <p class=" lg:mb-16 font-light  lg:text-sm  xl:text-lg w-10/12 pl-5 ">
                             Estamos ubicados en Caracas, Venezuela.
                         </p>
 
@@ -78,9 +79,9 @@ function submit() {
                     <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-newkool-red ">Envía tu
                         mensaje
                     </h2>
-                    <p class="mb-8 lg:mb-16 font-light text-center text-gray-500  sm:text-xl">Envíanos tu mensaje
+                    <p class="mb-8 lg:mb-16 font-light  text-gray-500  sm:text-xl">Envíanos tu mensaje
                         mediante el
-                        siguiente formulario. Tu opinion es importante para nosotros.
+                        siguiente formulario. Tu opinión es importante para nosotros.
                     </p>
                     <form class="space-y-8" @submit.prevent="submit">
                         <div class="flex flex-col md:flex-row gap-6 w-full">

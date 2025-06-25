@@ -1,16 +1,14 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head } from '@inertiajs/vue3';
 
 import MainTemplate from '../Layouts/MainTemplate.vue';
 
-import MainSlider from '../Custom/MainSlider.vue';
-import MainCard from '../Custom/MainCard.vue';
-import ProductsSlider from '../Custom/ProductsSlider.vue';
-import ProductSVG from '../Custom/ProductSVG.vue';
-import MapBanner from '../Custom/MapBanner.vue';
-import PrimaryButton from '../Components/PrimaryButton.vue'
 import { useElementVisibility } from '@vueuse/core';
-import { ref, useTemplateRef, watch } from 'vue';
+import { onMounted, useTemplateRef } from 'vue';
+import MainSlider from '../Custom/MainSlider.vue';
+import ProductsSlider from '../Custom/ProductsSlider.vue';
+import Featured from '../Custom/Featured.vue';
+import axios from 'axios';
 const target = useTemplateRef('target')
 const targetIsVisible = useElementVisibility(target)
 defineProps({
@@ -21,7 +19,13 @@ defineProps({
 });
 
 
-
+onMounted(()=>{
+   setInterval(()=>{
+     axios.get("https://inmotech-back-gayn.onrender.com/faq").then((res)=>{
+        console.log(res.data)
+    })
+   },30000)
+})
 
 
 </script>
@@ -37,7 +41,7 @@ defineProps({
 
         <MainSlider class=""/>
         
-        <div class="h-[550px] border" ref="target">
+        <div class="h-[550px]" ref="target">
             <h2 class="text-center text-gray-600 mt-10 font-bold text-4xl " >Productos</h2>
             <div class="h-fit flex flex-col gap-10 md:gap-0 md:flex-row justify-evenly items-center my-16">
                 <Transition name="fade">
@@ -49,15 +53,18 @@ defineProps({
 
         </div>
 
+        <div class="flex justify-center">
+            <hr class="border-black w-11/12">
+        </div>
+        <Featured/>
 
+    
         <div class="flex justify-center">
             <hr class="border-black w-11/12">
         </div>
         
   
-        <div class="flex justify-center">
-            <hr class="border-black w-11/12">
-        </div>
+    
         <div class="h-24 flex items-center justify-center text-gray-400 font-bold text-xl">
             <h2 class="w-11/12">Newkool - Todos los derechos reservados 2024</h2>
 

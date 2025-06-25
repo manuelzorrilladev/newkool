@@ -41,7 +41,9 @@ import {
     faChevronRight,
     faChevronUp,
     faChevronDown,
-    faCircleXmark
+    faCircleXmark,
+    faBullseye,
+    faLightbulb
 
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faXTwitter, faWhatsapp,faPinterest  } from '@fortawesome/free-brands-svg-icons'
@@ -77,7 +79,9 @@ library.add(
     faChevronRight,
     faChevronUp,
     faChevronDown,
-    faCircleXmark
+    faCircleXmark,
+    faBullseye,
+    faLightbulb
 )
 
 

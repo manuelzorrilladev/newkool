@@ -35,7 +35,7 @@ function changeSubOption(pos) {
     <div @focusout="toggleNav()" class="flex flex-col items-center justify-center h-24   text-gray-600 lg:hidden absolute top-0 w-full  z-20">
         <div class="flex flex-row items-center justify-around w-full bg-white h-full">
             <Link :href="'/'">
-                {{ subOption }}
+              
             <ApplicationLogo class="w-36" color="fill-newkool-red" />
             </Link>
             <div class="border p-2 rounded-md cursor-pointer hover:shadow-md" @click="toggleNav">
@@ -350,6 +350,13 @@ function changeSubOption(pos) {
 
 
                     </div>
+
+                      <Link :href="'/linea-blanca/Vineras'"
+                        class="flex justify-center border space-x-2 items-center py-3 w-full ">
+                    Vineras
+                    </Link>
+
+
 
 
 
