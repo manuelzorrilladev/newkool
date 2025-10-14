@@ -3,9 +3,29 @@ import { Head, Link } from '@inertiajs/vue3';
 import MainTemplate from '../Layouts/MainTemplate.vue';
 
 import VideoBanner from '../Custom/VideoBanner.vue';
+import axios from 'axios';
+import { ref } from 'vue';
+const notification =ref('-right-full')
 
-
-
+function download() {
+    axios.get('/api/download-catalogue', { responseType: 'blob' })
+        .then((response) => {
+            const url = window.URL.createObjectURL(new Blob([response.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'catalogo-newkool-2025.pdf');
+            document.body.appendChild(link);
+            link.click();
+            notification.value = 'right-8'
+            setTimeout(() => {
+                notification.value = '-right-full'
+            }, 3000);
+        })
+    
+        .catch((error) => {
+            console.error('Error downloading file:', error);
+        });
+}
 
 </script>
 
@@ -24,12 +44,18 @@ import VideoBanner from '../Custom/VideoBanner.vue';
                 </ul>
 
             </section>
-            <section class="fixed z-50 button z-50 group">
-                <button class="flex  items-center px-10 py-2 shadow-xl rounded bg-newkool-red text-xl text-white gap-4 hover:-translate-y-4 hover:opacity-0 duration-300">
+            <section :class="notification" class="fixed  top-28 duration-300 z-50">
+                <div  class="flex cursor-pointer  border border-newkool-red items-center px-10 py-2 shadow-xl rounded-l bg-newkool-red text-xl text-white gap-4 duration-300 ">
+                    Cátalogo descargado!
+                </div>
+                
+            </section>
+            <section class="fixed  bottom-8 right-8 z-50">
+                <button @click="download()" class="flex cursor-pointer  border border-newkool-red items-center px-10 py-2 shadow-xl rounded bg-newkool-red text-xl text-white gap-4 duration-300 hover:bg-white hover:text-newkool-red">
                     <p class="">Descargar</p>
                     <font-awesome-icon icon="fa-solid fa-download" class=""/>
                 </button>
-               
+                
             </section>
             
         </MainTemplate>

@@ -29,12 +29,12 @@ import Footer from '../Custom/Footer.vue';
                 <p class="text-xl">Revisa si escribiste bien la dirección de la misma.</p>
                 <div class="mt-2 group relative">
                     <Link :href="'/'"
-                        class="bg-newkool-red text-white flex items-center gap-2 py-2 px-6 rounded border border-newkool-red duration-200 hover:bg-white hover:text-newkool-red relative z-10 group-hover:-translate-x-1 group-hover:-translate-y-1 " >
+                        class="bg-newkool-red text-white flex items-center gap-2 py-2 px-6 rounded-sm border border-newkool-red duration-200 hover:bg-white hover:text-newkool-red relative z-10 group-hover:-translate-x-1 group-hover:-translate-y-1 " >
                         <font-awesome-icon :icon="['fas', 'arrow-left']" class="text-2xl " />
 
                         Volver
                     </Link>
-                    <div class="bg-newkool-red w-full h-full absolute rounded top-0">
+                    <div class="bg-newkool-red w-full h-full absolute rounded-sm top-0">
 
                     </div>
                 </div>

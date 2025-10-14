@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+
+Route::get('download-catalogue', function () {
+    $filePath = 'catalogo-newkool-2025.pdf'; 
+
+    if (Storage::exists($filePath)) {
+        return Storage::download('catalogo-newkool-2025.pdf');
+    } else {
+        return response()->json(['message' => 'File not found.'], 404);
+    }
+});
