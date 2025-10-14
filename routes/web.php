@@ -30,6 +30,10 @@ Route::get('/somos-newkool',function(){
     return Inertia::render('About') ;
 });
  
+Route::get('/catalogo', function(){
+    return Inertia::render('Catalog');
+});
+
 Route::get('/donde-encontrarnos', [NewkoolUbicationsController::class, 'index']);
 
 

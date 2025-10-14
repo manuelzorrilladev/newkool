@@ -33,6 +33,7 @@ import {
     faCaretRight,
     faArrowLeft,
     faArrowRight,
+    faDownload
 
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faXTwitter, faWhatsapp,faPinterest  } from '@fortawesome/free-brands-svg-icons'
@@ -59,7 +60,8 @@ library.add(
     faCaretLeft,
     faCaretRight,
     faArrowLeft,
-    faArrowRight, faPinterest
+    faArrowRight, faPinterest,
+    faDownload
 )
 
 

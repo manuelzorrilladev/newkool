@@ -21,6 +21,7 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
             Dónde
             Encontrarnos</Link>
+            
 
             
 
@@ -42,6 +43,10 @@ import ApplicationLogo from '../Components/ApplicationLogo.vue';
 
 
 
+            <Link :href="'/catalogo'"
+                class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
+            Catálogo
+            </Link>
             <Link :href="'/contacto'"
                 class="whitespace-nowrap px-10 py-2 rounded-3xl hover:text-white hover:bg-neutral-500 duration-200">
             Contacto
