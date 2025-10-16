@@ -50,6 +50,10 @@ function pageHandler(page) {
 function replaceLine(string){
     return string.replaceAll("-"," ")
 }
+
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 </script>
 
 <template>
@@ -59,36 +63,34 @@ function replaceLine(string){
             <title>Productos</title>
             <meta name="description" content="Newkoolamerica.com">
         </Head>
-        <div class="relative -top-14 overflow-hidden h-[30vw]">
+        <div class="relative">
             <div>
-                <img :src="`/assets/banner-images/banner-${name.toLowerCase()}-desktop.png`" alt=""
+                <img :src="`/assets/category-banners/${name.toLowerCase()}.jpg`" alt=""
                     class="hidden md:block">
-                <img :src="`/assets/banner-images/banner-${name.toLowerCase()}-mobile.png`" alt=""
+                <img :src="`/assets/category-banners/${name.toLowerCase()}-mobile.jpg`" alt=""
                     class="block md:hidden w-full">
 
             </div>
-            <div class="absolute top-0 left-0 w-full h-full bg-newkool-red/20">
-
-            </div>
+           
         </div>
 
-        <section class="min-h-screen">
+        <section class="min-h-screen mt-10">
 
             <div class="flex items-center justify-center flex-col pb-8 ">
                 <div class="text-3xl md:text-5xl font-bold text-newkool-red">
                     {{ replaceLine(name)}}
                 </div>
-                <div v-if="type" class="text-xl md:text-5xl font-bold text-newkool-red uppercase">
-                    {{ replaceLine(type)}}
+                <div v-if="type" class="text-xl md:text-4xl font-bold text-newkool-red ">
+                    {{ capitalize(replaceLine(type))}}
                 </div>
 
                 <div v-if="productsInPage.length > 0"
-                    class="grid rounded-lg bg-white my-8 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center place-content-center gap-2 w-fit">
+                    class="grid rounded-lg bg-white my-8 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center place-content-center gap-2 w-11/12">
                     <div v-for="(item, index) in productsInPage" :key="index">
                         <div v-if="setShow(index + 1)"
-                            class="h-fit py-10 w-72 flex flex-col items-center border border-white rounded-md hover:border-newkool-red px-10 group duration-200 ">
-                            <img :src="`/assets/products-images/${item.code}.jpg`" :alt="item.type"
-                                class="w-44 min-w-44 group-hover:scale-110 duration-200">
+                            class=" py-10  flex flex-col items-center border border-white rounded-md hover:border-newkool-red px-10 group duration-200 ">
+                            <img :src="`/assets/products-images/${item.code}-1.webp`" :alt="item.type"
+                                class=" group-hover:scale-110 duration-200 pb-6 w-11/12">
                             <h2 class="relative z-10 text-center text-sm font-light">{{ item.name }}</h2>
                             <Link :href="`/productos/${item.name}`"
                                 class=" text-lg px-5 mt-4  border-newkool-red border bg-newkool-red text-white hover:text-newkool-red hover:bg-white duration-300 rounded-3xl ">
@@ -101,16 +103,16 @@ function replaceLine(string){
                     </div>
                 </div>
                 <div v-else class=" h-screen w-full flex items-center justify-center">
-                    <header class="flex flex-col items-center text-newkool-red gap-6">
-                        <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-9xl"/>
-                        <h2 class="font-bold text-2xl md:text-5xl text-center">No hay productos que encajen con tu busqueda</h2>
+                    <header class="flex flex-col items-center text-newkool-red gap-6 ">
+                        <font-awesome-icon :icon="['fas', 'circle-xmark']" class="text-9xl "/>
+                        <h2 class="font-bold text-2xl md:text-5xl text-center w-10/12">No hay productos que encajen con tu busqueda</h2>
                         <Link href="/linea-blanca" class=" text-white bg-newkool-red cursor-pointer border border-newkool-red duration-200 hover:text-newkool-red hover:bg-white  rounded text-2xl py-3 px-6">
                             Volver 
                         </Link>
                     </header>
                 </div>
 
-                <div class="flex items-center gap-4">
+                <div v-if="totalPages >0" class="flex items-center gap-4">
                     <font-awesome-icon :icon="['fas', 'chevron-left']"
                         class="text-black hover:text-newkool-red duration-200 cursor-pointer "
                         @click="pageHandler(-1)" />

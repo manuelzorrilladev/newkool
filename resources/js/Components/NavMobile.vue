@@ -32,10 +32,11 @@ function changeSubOption(pos) {
 </script>
 
 <template>
-    <div @focusout="toggleNav()" class="flex flex-col items-center justify-center h-24   text-gray-600 lg:hidden absolute top-0 w-full  z-20">
+    <div @focusout="toggleNav()"
+        class="flex flex-col items-center justify-center h-24   text-gray-600 lg:hidden absolute top-0 w-full  z-20">
         <div class="flex flex-row items-center justify-around w-full bg-white h-full">
             <Link :href="'/'">
-              
+
             <ApplicationLogo class="w-36" color="fill-newkool-red" />
             </Link>
             <div class="border p-2 rounded-md cursor-pointer hover:shadow-md" @click="toggleNav">
@@ -56,7 +57,7 @@ function changeSubOption(pos) {
                     <Link :href="'/'" class="w-full text-center border py-4 text-xl font-bold">
                     Inicio</Link>
                     <Link :href="'/somos-newkool'" class="w-full text-center border py-4 text-xl font-bold">
-                    ¿Quiénes somos?</Link>
+                    Quienes somos</Link>
 
 
 
@@ -69,7 +70,7 @@ function changeSubOption(pos) {
                     Contacto
                     </Link>
 
-                    <Link :href="'#'" class="w-full text-center border py-4 text-xl font-bold">
+                    <Link :href="'/servicio-tecnico'" class="w-full text-center border py-4 text-xl font-bold">
                     Servicio Técnico
                     </Link>
 
@@ -227,11 +228,29 @@ function changeSubOption(pos) {
                     Exibidoras Vitrinas
                     </Link>
 
-                    <Link :href="'/linea-blanca/Hornos'"
+                    <div @click="changeSubOption(9)"
                         class="flex justify-center border space-x-2 items-center py-3 w-full ">
-                    Hornos
-                    </Link>
+                        <h2>
+                            Hornos
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-down']" />
 
+
+                    </div>
+                    <div v-if="subOption == 9" class="bg-neutral-200 flex flex-col">
+                        <Link :href="'/linea-blanca/Hornos/hornos-a-gas'"
+                            class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
+                        Gas
+                        </Link>
+                        <Link :href="'/linea-blanca/Hornos/hornos-electricos'"
+                            class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
+                        Electrico
+                        </Link>
+
+
+
+
+                    </div>
 
 
 
@@ -291,8 +310,7 @@ function changeSubOption(pos) {
                     </div>
 
 
-                    <div  v-if="subOption == 7"
-                        class="bg-neutral-200  flex flex-col">
+                    <div v-if="subOption == 7" class="bg-neutral-200  flex flex-col">
                         <Link :href="'/linea-blanca/Refrigeradoras/top-mount'"
                             class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
                         Top mount (Congelador superior )
@@ -315,14 +333,35 @@ function changeSubOption(pos) {
                     </div>
 
 
-                    <Link :href="'/linea-blanca/Topes'"
-                        class="flex justify-center border space-x-2 items-center py-3 w-full ">
-                    Topes
-                    </Link>
+
 
 
 
                     <div @click="changeSubOption(8)"
+                        class="flex justify-center border space-x-2 items-center py-3 w-full ">
+                        <h2>
+                            Topes
+
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-down']" />
+
+
+                    </div>
+
+                    <div v-if="subOption == 8" class="bg-neutral-200  flex flex-col">
+                        <Link :href="'/linea-blanca/Topes/topes-a-gas'"
+                            class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
+                        Gas
+                        </Link>
+                        <Link :href="'/linea-blanca/Topes/topes-electricos'"
+                            class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
+                        Eléctrico
+                        </Link>
+
+
+
+                    </div>
+                    <div @click="changeSubOption(9)"
                         class="flex justify-center border space-x-2 items-center py-3 w-full ">
                         <h2>
                             TV y Audio
@@ -333,8 +372,7 @@ function changeSubOption(pos) {
 
                     </div>
 
-                    <div v-if="subOption == 8" 
-                        class="bg-neutral-200  flex flex-col">
+                    <div v-if="subOption == 9" class="bg-neutral-200  flex flex-col">
                         <Link :href="'/linea-blanca/TV-y-audio/32-pulgadas'"
                             class="flex justify-center border border-neutral-400 h-full  items-center py-3 w-screen">
                         32"
@@ -351,7 +389,7 @@ function changeSubOption(pos) {
 
                     </div>
 
-                      <Link :href="'/linea-blanca/Vineras'"
+                    <Link :href="'/linea-blanca/Vineras'"
                         class="flex justify-center border space-x-2 items-center py-3 w-full ">
                     Vineras
                     </Link>

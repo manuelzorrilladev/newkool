@@ -72,7 +72,7 @@ function submit() {
         <main class="w-full overflow-hidden">
             <div class="flex justify-center w-full">
                 <header class="w-10/12 space-y-4">
-                    <h2 class="text-newkool-red text-5xl font-bold">GARANTÍA DE PRODUCTOS</h2>
+                    <h2 class="text-newkool-red text-5xl font-bold">Garantía de productos</h2>
                     <hr class="h-2 bg-newkool-red w-14">
                     <p class="text-2xl text-gray-700 font-light">Nuestro personal garantiza a todos sus usuarios
                         finales, en
@@ -90,7 +90,7 @@ function submit() {
                     <div class="flex gap-3 items-start md:w-1/2 ">
                         <div class="hidden md:flex flex-col items-center justify-center space-y-4">
                             <div
-                                class="space-x-0.5  text-4xl bg-newkool-red border border-newkool-red text-white duration-200 hover:bg-white hover:text-newkool-red rounded-full p-4">
+                                class="space-x-0.5  text-4xl bg-newkool-red border border-newkool-red text-white duration-200 hover:bg-white hover:text-newkool-red rounded-full p-2">
                                 <font-awesome-icon :icon="['fas', 'ellipsis-vertical']" />
                                 <font-awesome-icon :icon="['fas', 'bars']" />
                             </div>
@@ -116,7 +116,7 @@ function submit() {
                                 <li class="list-disc ml-6">Compras a vendedores y distribuidores no autorizados.</li>
 
                             </ul>
-                            <a href="https://api.whatsapp.com/send?phone=584148811719&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." class=" py-4 text-center  w-full border border-newkool-red bg-newkool-red text-2xl text-white rounded-xl duration-200 hover:text-newkool-red hover:bg-white">Contactar</a>
+                            <a href="https://api.whatsapp.com/send?phone=584148811719&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." class=" py-4 text-center  w-sm border border-newkool-red bg-newkool-red text-2xl text-white rounded-xl duration-200 hover:text-newkool-red hover:bg-white">Contactar</a>
                         </header>
                     </div>
                     <img src="/assets/route-images/service/service-1.png" alt=""
@@ -129,7 +129,7 @@ function submit() {
             <div ref="target2" :class="target2IsVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'"
                 class="flex justify-center w-full  duration-700">
                 <header class="w-10/12 space-y-4">
-                    <h2 class="text-newkool-red text-4xl font-bold">REQUISITOS PARA RECLAMAR LA GARANTÍA</h2>
+                    <h2 class="text-newkool-red text-4xl font-bold">Requisitos para reclamar la garantía</h2>
                     <hr class="h-2 bg-newkool-red w-14">
 
                 </header>
@@ -144,7 +144,7 @@ function submit() {
                     <div class="flex gap-3 items-start md:w-1/2 ">
                         <div class=" hidden md:flex flex-col items-center justify-center space-y-4">
                             <div
-                                class="space-x-0.5  text-4xl bg-newkool-red border border-newkool-red text-white duration-200 hover:bg-white hover:text-newkool-red rounded-full p-4">
+                                class="space-x-0.5  text-4xl bg-newkool-red border border-newkool-red text-white duration-200 hover:bg-white hover:text-newkool-red rounded-full p-2">
                                 <font-awesome-icon :icon="['fas', 'ellipsis-vertical']" />
                                 <font-awesome-icon :icon="['fas', 'bars']" />
                             </div>

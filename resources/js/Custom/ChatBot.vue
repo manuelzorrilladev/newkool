@@ -1,9 +1,21 @@
 <script setup>
 import { text } from '@fortawesome/fontawesome-svg-core';
 import ApplicationLogo from '../Components/ApplicationLogo.vue';
-import { ref, useTemplateRef, watch } from 'vue';
+import { computed, ref, useTemplateRef, watch } from 'vue';
 import { useScroll, useElementSize } from '@vueuse/core'
+import { router } from '@inertiajs/vue3';
 
+const checkRoute = computed(()=>{
+  if(actualRoute == '/contacto'){
+    return false
+  }else{
+    if( actualRoute == '/servicio-tecnico'){
+      return false
+    }
+    return  true
+  }
+})
+const actualRoute = router.page.url
 
 const el = useTemplateRef('chat')
 const logo = ref(null)
@@ -74,8 +86,8 @@ function testClick() {
 </script>
 
 <template>
-  <section class="fixed bottom-10 left-10  z-50 flex flex-col  w-11/12  gap-2 md:w-1/4  ">
-    <div :class="[containerSize]" class=" inverted-radius bg-newkool-red duration-200">
+  <section v-if="checkRoute" class="fixed bottom-10 left-10  z-50 flex flex-col  w-11/12  gap-2 md:w-1/4  ">
+    <div :class="[containerSize]" class=" inverted-radius bg-newkool-red duration-200 relative z-40">
       <div ref="logo" class="h-[64px] w-full flex justify-center" @click="y += 1000 ">
         <ApplicationLogo  color="fill-white" class="w-1/3"  />
       </div>
@@ -107,10 +119,11 @@ function testClick() {
 
 
     <button
-      class="w-16 h-16 absolute bottom-1 left-1 text-white bg-newkool-red cursor-pointer border border-newkool-red duration-200 hover:text-newkool-red hover:bg-white rounded-full text-3xl"
+      class="w-16 h-16 absolute z-50 bottom-1 left-1 text-white bg-newkool-red cursor-pointer border border-newkool-red duration-200 hover:text-newkool-red hover:bg-white rounded-full text-3xl"
       @click="testClick()">
       <font-awesome-icon :icon="['fas', 'paper-plane']" class="" />
     </button>
+    <h2 class="absolute bottom-1 font-newkool text-[#808080] left-20 text-2xl z-30">Comercial</h2>
 
   </section>
 </template>

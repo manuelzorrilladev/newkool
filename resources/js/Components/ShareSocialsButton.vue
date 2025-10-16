@@ -24,6 +24,12 @@ const socialsLinks = {
         "icon": "pinterest"
 
     },
+    "instagram": {
+        "link": "https://www.instagram.com/?url=",
+
+        "icon": "instagram"
+
+    },
 
 
 }
@@ -33,8 +39,11 @@ const socialsLinks = {
 
 <template>
     <a :href="`${socialsLinks[social].link}${currentUrl}`" target="_blank"
-        class="text-md w-fit  flex items-center h-7 text-white bg-newkool-red border border-newkool-red duration-200  hover:bg-white hover:text-newkool-red rounded-md">
-        <font-awesome-icon :icon="['fab', socialsLinks[social].icon]" class="px-4 py-1 rounded-xs text-xl" />
+        class="text-md  flex items-center h-7 text-white bg-newkool-red border border-newkool-red duration-200  hover:bg-white hover:text-newkool-red rounded-md">
+        <font-awesome-icon :icon="['fab', socialsLinks[social].icon]" class="px-4 py-1 rounded-xs text-xl " />
+        <h2>
+            {{ social.charAt(0).toUpperCase() + social.slice(1) }}
 
+        </h2>
     </a>
 </template>

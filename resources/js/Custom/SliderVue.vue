@@ -102,17 +102,22 @@ function checkBreakpoint() {
 function moveAnimation(miliseconds) {
   let count = 0;
   const interval = setInterval(() => {
-    if (count < itemToShow.value) {
-      element.value.children[count].classList.add(
-        animation.value[animationName.value][1]
-      );
-      element.value.children[count].classList.remove(
-        animation.value[animationName.value][0]
-      );
-      count++;
-    } else {
-      count = 0;
-      clearInterval(interval);
+    if(element.value){
+
+      if (count < itemToShow.value) {
+        element.value.children[count].classList.add(
+          animation.value[animationName.value][1]
+        );
+        element.value.children[count].classList.remove(
+          animation.value[animationName.value][0]
+        );
+        count++;
+      } else {
+        count = 0;
+        clearInterval(interval);
+      }
+    }else{
+      clearInterval(interval)
     }
   }, miliseconds);
 }

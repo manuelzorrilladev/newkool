@@ -1,10 +1,12 @@
 <script setup>
-
+import { router } from '@inertiajs/vue3';
+const actualRoute = router.page.url
+console.log(actualRoute);
 </script>
 
 <template>
     <footer
-        class="h-fit lg:h-24 py-10 gap-6 flex flex-col md:flex-row items-center justify-around bg-newkool-red text-white relative z-50">
+        class="h-fit lg:h-24 py-10 gap-6 flex flex-col md:flex-row items-center justify-around bg-newkool-red text-white relative z-30">
         <div class="flex flex-col md:flex-row items-center gap-5 w-full md:w-1/2 ">
             <div class="flex gap-2">
                 <font-awesome-icon :icon="['fas', 'envelope']" class="text-2xl fill-white" />
@@ -17,8 +19,10 @@
 
                 <p>
                  
-                    <a href="https://wa.me/584148811721" target="_blank"
+                    <a v-if="actualRoute == '/servicio-tecnico'" href="https://wa.me/584148811721" target="_blank"
                         class="hover:text-gray-300 hover:underline">+584148811721</a>
+                    <a v-else href="https://wa.me/584148811719" target="_blank"
+                        class="hover:text-gray-300 hover:underline">+584148811719</a>
                 </p>
             </div>
         </div>

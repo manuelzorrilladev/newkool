@@ -1,211 +1,194 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
 
+import { onClickOutside } from '@vueuse/core';
+import { ref, useTemplateRef } from 'vue';
 import ApplicationLogo from '../Components/ApplicationLogo.vue';
-import { ref } from 'vue';
-import { useMouseInElement, onClickOutside } from '@vueuse/core'
-import { useTemplateRef } from 'vue'
 
 
 const target = useTemplateRef('target')
 const target2 = useTemplateRef('target2')
-const section = ref(-1)
+const section = ref('unactive')
 
-function activateSection(sectionNumber) {
-    section.value = sectionNumber;
+function activateSection(sectionVal) {
+    section.value = sectionVal;
 }
 
-onClickOutside(target2, event => activateSection(-1))
+onClickOutside(target2, event => activateSection('unactive'))
 
 </script>
 
 <template>
 
-    <div ref="target2" class=" hidden lg:flex items-start h-20 justify-evenly px-36 gap-20  pt-6 text-gray-600">
-        <Link :href="'/'">
-        <ApplicationLogo class="w-36" color="fill-newkool-red" />
+    <div ref="target2"
+        class=" hidden lg:flex items-start h-14 justify-between px-36 gap-20 pt-3 text-gray-500 bg-linear-to-r from-[#ededed] via-[#eeeeee] to-[#d8d8d8] w-full ">
+        <Link :href="'/'" class="">
+        <ApplicationLogo class="w-44" color="fill-newkool-red" />
         </Link>
-        <div class=" flex  justify-between  w-fit gap-3 py-0">
-            <Link @mouseenter="activateSection(-1)" :href="'/'"
-                class="whitespace-nowrap px-10 py-2 rounded-3xl  duration-200">
+        <div class=" flex  justify-between  w-full gap-3 pb-0 pt-1">
+            <Link @mouseenter="activateSection('unactive')" :href="'/'"
+                class="whitespace-nowrap px-10  rounded-3xl  duration-200">
             Inicio </Link>
-            <Link @mouseenter="activateSection(-1)" :href="'/somos-newkool'"
-                class="whitespace-nowrap px-10 py-2 rounded-3xl  duration-200">
-            ¿Quiénes somos?</Link>
-
-
-
 
             <div class="flex flex-col items-center w-36   group relative">
-                <div @mouseenter="activateSection(0)"
-                    class="whitespace-nowrap px-10 pt-2 pb-8 rounded-3xl duration-200">
-                    Productos</div>
-                <div v-if="section >= 0" class="bg-neutral-200 space-y-2 py-4 rounded-xl   group-hover:block">
-                    <Link href="/linea-blanca/Aires-acondicionados"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(1)">
-                    <h2>
-                        Aires Acondicionados
+                <div @mouseenter="activateSection('productos')"
+                    class="whitespace-nowrap px-10 pb-8 rounded-3xl duration-200">
+                    Productos
+                </div>
+                <div v-if="section !== 'unactive'" class="bg-neutral-200 space-y-2 py-4 rounded-xl  ">
 
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
-
-
-                    </Link>
-
-                    <div>
-
-                        <Link href="/linea-blanca/Audio"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline ">
+                    <div class="">
+                        <Link href="/linea-blanca/Aires-acondicionados"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('aires-acondicionados');">
                         <h2>
-                            Audio
-
+                            Aires Acondicionados
                         </h2>
-
-
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
                         </Link>
                     </div>
 
-                    <div class="py-2">
+                    <div class="">
+                        <Link href="/linea-blanca/Audio"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
+                        <h2>
+                            Audio
+                        </h2>
+                        </Link>
+                    </div>
 
-                        <Link @mouseover="activateSection(0)" :href="'/linea-blanca/Campanas'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2 hover:underline  duration-200 h-10  w-full">
+                    <div class="">
+                        <Link @mouseover="activateSection('campanas')" :href="'/linea-blanca/Campanas'"
+                            class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Campanas
                         </Link>
                     </div>
 
-                    <Link href="/linea-blanca/Cocinas"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(8)">
-                    <h2>
-                        Cocinas
+                    <div class="">
+                        <Link href="/linea-blanca/Cocinas"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('cocinas')">
+                        <h2>
+                            Cocinas
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
+                    </div>
 
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                    <div class="">
+                        <Link href="/linea-blanca/Congeladores"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('congeladores')">
+                        <h2>
+                            Congeladores
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
+                    </div>
 
+                    <div class="">
+                        <Link href="/linea-blanca/Dispensadores/"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
+                        <h2>
+                            Dispensadores
+                        </h2>
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
+                        </Link>
+                    </div>
 
-                    </Link>
-
-                    <Link href="/linea-blanca/Congeladores"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(6)">
-                    <h2>
-                        Congeladores
-
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
-
-
-                    </Link>
-
-
-                    <Link href="/linea-blanca/Dispensadores/"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline ">
-                    <h2>
-                        Dispensadores
-
-                    </h2>
-                    <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
-
-
-                    </Link>
-                    <div class="py-2">
-
-                        <Link @mouseover="activateSection(0)" :href="'/linea-blanca/Exibidoras-vitrinas'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2 hover:underline  duration-200 h-10  w-full">
+                    <div class="">
+                        <Link @mouseover="activateSection('exibidoras-vitrinas')"
+                            :href="'/linea-blanca/Exibidoras-vitrinas'"
+                            class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Exibidoras Vitrinas
                         </Link>
                     </div>
 
-                    <div class="py-2">
-
-                        <Link @mouseover="activateSection(0)" :href="'#'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2 hover:underline  duration-200 h-10  w-full">
-                        Hornos</Link>
+                    <div class="">
+                        <Link @mouseover="activateSection('hornos')" :href="'/linea-blanca/hornos'"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
+                        <h2>
+                            Hornos
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
                     </div>
 
-                    <Link href="/linea-blanca/Lavadoras"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(4)">
-                    <h2>
-                        Lavadoras
-
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
-
-
-                    </Link>
-
-                    <div class="py-2">
-
-                        <Link @mouseover="activateSection(0)" :href="'/linea-blanca/Protectores-de-voltaje'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2 hover:underline  duration-200 h-10  w-full">
-                        Protectores de Voltaje</Link>
+                    <div class="">
+                        <Link href="/linea-blanca/Lavadoras"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('lavadoras')">
+                        <h2>
+                            Lavadoras
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
                     </div>
 
-                    <Link href="/linea-blanca/Refrigeradoras"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(5)">
-                    <h2>
-                        Refrigeradoras
+                    <div class="">
+                        <Link @mouseover="activateSection('protectores-de-voltaje')"
+                            :href="'/linea-blanca/Protectores-de-voltaje'"
+                            class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
+                        Protectores de Voltaje
+                        </Link>
+                    </div>
 
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                    <div class="">
+                        <Link href="/linea-blanca/Refrigeradoras"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('refrigeradoras')">
+                        <h2>
+                            Refrigeradoras
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
+                    </div>
 
-
-                    </Link>
-
-                    <div class="py-2">
-
-                        <Link @mouseover="activateSection(7)" :href="'/linea-blanca/Topes'"
-                            class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline">
-
+                    <div class="">
+                        <Link @mouseover="activateSection('topes')" :href="'/linea-blanca/Topes'"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline">
                         <h2>
                             Topes
-
                         </h2>
                         <font-awesome-icon :icon="['fas', 'chevron-right']" />
 
                         </Link>
                     </div>
 
-
-
-                    <Link href="/linea-blanca/Televisores"
-                        class="whitespace-nowrap cursor-pointer px-8 py-2  flex justify-between space-x-2 items-center hover:underline "
-                        @mouseover="activateSection(3)">
-                    <h2>
-                        Televisores
-                    </h2>
-                    <font-awesome-icon :icon="['fas', 'chevron-right']" />
-
-
-                    </Link>
-
-                   
-
-
-
+                    <div class="">
+                        <Link href="/linea-blanca/Televisores"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            @mouseover="activateSection('televisores')">
+                        <h2>
+                            Televisores
+                        </h2>
+                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        </Link>
+                    </div>
 
                 </div>
-
-
 
             </div>
 
 
+
+
+
+
             <div class="flex flex-col items-center   relative">
-
-                <Link @mouseenter="activateSection(-1)" :href="'/contacto'"
-                    class="whitespace-nowrap px-10 py-2 rounded-3xl  duration-200 mb-6">
-                Contacto
-                </Link>
-                <section v-if="section != 0">
+                <Link @mouseenter="activateSection('unactive')" :href="'/somos-newkool'"
+                    class="whitespace-nowrap px-10  rounded-3xl  duration-200">
+                Quienes somos</Link>
 
 
 
-                    <div v-if="section == 1" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-16 left-10 flex flex-col">
+
+
+                <section v-if="section !== 'unactive'">
+
+                    <div v-if="section === 'aires-acondicionados'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[57px] left-2 flex flex-col">
+
                         <Link :href="'/linea-blanca/Aires-acondicionados/ventana'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Ventana
@@ -222,44 +205,46 @@ onClickOutside(target2, event => activateSection(-1))
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Portatil
                         </Link>
-
                     </div>
 
-
-                    <!-- <div v-if="section == 2" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-32 left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Audio/torre-de-sonido'"
+                    <div v-if="section === 'cocinas'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[165px] left-2 flex flex-col">
+                        <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Torre de Sonido
+                        Gas
                         </Link>
-                        <Link :href="'/linea-blanca/Audio/portable'"
+                        <Link :href="'/linea-blanca/Cocinas/cocina-electrica'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Portables
+                        Eléctricas
                         </Link>
-
-
-                    </div> -->
-
-
-
-                    <div v-if="section == 3" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[650px] left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Televisores/bases-Televisores'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Bases para Televisores
-                        </Link>
-                        <Link :href="'/linea-blanca/Televisores'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Televisores
-                        </Link>
-
-
-
                     </div>
 
+                    <div v-if="section === 'congeladores'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[200px] left-2 flex flex-col">
+                        <Link href="/linea-blanca/Congeladores/verticales"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Verticales
+                        </Link>
+                        <Link href="/linea-blanca/Congeladores/horizontales"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Horizontales
+                        </Link>
+                    </div>
 
-                    <div v-if="section == 4" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[465px] left-10 flex flex-col">
+                    <div v-if="section === 'hornos'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[295px] left-2 flex flex-col">
+                        <Link :href="'/linea-blanca/Hornos/hornos-a-gas'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Gas
+                        </Link>
+                        <Link :href="'/linea-blanca/Hornos/hornos-electricos'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Eléctrico
+                        </Link>
+                    </div>
+
+                    <div v-if="section === 'lavadoras'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[330px] left-2 flex flex-col">
                         <Link :href="'/linea-blanca/Lavadoras/doble-tina'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Doble Tina
@@ -280,117 +265,84 @@ onClickOutside(target2, event => activateSection(-1))
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Secadora
                         </Link>
-
-
-
                     </div>
 
 
-                    <div v-if="section == 5" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[550px] left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Refrigeradoras/top-mount'"
+                    <div v-if="section === 'refrigeradoras'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[390px] left-2 flex flex-col">
+                        <Link :href="'/linea-blanca/Refrigeradoras/sin-escarcha'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Top mount (Congelador superior )
+                        Sin Escarcha
+                        </Link>
+                        <Link :href="'/linea-blanca/Refrigeradoras/semi-escarcha'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Semi Escarcha
                         </Link>
                         <Link :href="'/linea-blanca/Refrigeradoras/side-by-side'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Side by Side (Dos puertas)
                         </Link>
-                        <Link :href="'/linea-blanca/Refrigeradoras/tipo-frances'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Tipo Frances
-                        </Link>
                         <Link :href="'/linea-blanca/Refrigeradoras/ejecutivas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Ejecutivas / Mini Bares
                         </Link>
+                    </div>
 
+                    <div v-if="section === 'topes'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[420px] left-2 flex flex-col">
+                        <Link :href="'/linea-blanca/Refrigeradoras/topes-a-gas'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Gas
+                        </Link>
+                        <Link :href="'/linea-blanca/Refrigeradoras/topes-electricos'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Eléctricos
+                        </Link>
+                    </div>
 
-
+                    <div v-if="section === 'televisores'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[450px] left-2 flex flex-col">
+                        <Link :href="'/linea-blanca/Televisores/bases-Televisores'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Bases para Televisores
+                        </Link>
+                        <Link :href="'/linea-blanca/Televisores'"
+                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
+                        Televisores
+                        </Link>
                     </div>
 
 
-                    <div v-if="section == 6" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[275px] left-10 flex flex-col">
-                        <Link href="/linea-blanca/Congeladores/verticales"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Verticales
-                        </Link>
-                        <Link href="/linea-blanca/Congeladores/horizontales"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Horizontales
-                        </Link>
 
 
 
 
-                    </div>
-
-
-                    <!-- <div v-if="section == 10" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[320px] left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Dispensadores/carga-superior'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Carga Superior
-                        </Link>
-                        <Link :href="'/linea-blanca/Dispensadores/carga-interna'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Carga Interna
-                        </Link>
 
 
 
 
-                    </div> -->
-                    <div v-if="section == 7" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[600px] left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Cocinas a Gas
-
-                        </Link>
-                        <Link :href="'/linea-blanca/Cocinas/cocina-electrica'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Cocinas eléctricas
-
-                        </Link>
 
 
-
-
-                    </div>
-
-                    <div v-if="section == 8" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-56 left-10 flex flex-col">
-                        <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Cocinas a Gas
-
-                        </Link>
-                        <Link :href="'/linea-blanca/Cocinas/cocina-electrica'"
-                            class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
-                        Cocinas eléctricas
-
-                        </Link>
-
-
-
-
-                    </div>
                 </section>
 
             </div>
-            <Link @mouseenter="activateSection(-1)" :href="'/servicio-tecnico'"
-                class="whitespace-nowrap px-10 py-2 rounded-3xl  duration-200">
+
+            <Link @mouseenter="activateSection('unactive')" :href="'/contacto'"
+                class="whitespace-nowrap px-10  rounded-3xl  duration-200 mb-6">
+            Contacto
+            </Link>
+
+
+            <Link @mouseenter="activateSection('unactive')" :href="'/servicio-tecnico'"
+                class="whitespace-nowrap px-10  rounded-3xl  duration-200">
             Servicio Técnico
             </Link>
         </div>
 
 
     </div>
-    <div class="flex items-center justify-center">
-        <hr class="border-black w-11/12">
-    </div>
+
+
 </template>
 
 <style scoped></style>

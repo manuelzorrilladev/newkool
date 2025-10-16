@@ -65,7 +65,7 @@ function submit() {
                             Para atención al cliente, puedes escribir a atencionalcliente@newkoolamerica.com <br> o
                             comunicarte al número de WhatsApp 
                         </p>
-                        <a href="https://api.whatsapp.com/send?phone=584148811721&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." target="_blank" class="hover:underline pl-5 w-11/12">+584148811721.</a>
+                        <a href="https://api.whatsapp.com/send?phone=584148811719&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." target="_blank" class="hover:underline pl-5 w-11/12">+584148811719.</a>
                         <p class=" lg:mb-16 font-light  lg:text-sm  xl:text-lg w-10/12 pl-5 ">
                             Estamos ubicados en Caracas, Venezuela.
                         </p>

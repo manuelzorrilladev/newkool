@@ -31,6 +31,13 @@ Route::get('/somos-newkool',function(){
 });
 
 
+Route::get('/catalogo', function(){
+    return Inertia::render('Catalog');
+});
+
+
+
+
 Route::get('/servicio-tecnico',function(){
     return Inertia::render('Service') ;
 });

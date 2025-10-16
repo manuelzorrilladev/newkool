@@ -8,42 +8,49 @@ use Illuminate\Support\Facades\DB;
 
 class NewkoolProductsController extends Controller
 {
-    public function getAll(){
-        $products = DB::table('newkool_products')->select('id','code','type','name')->get();
+    public function getAll()
+    {
+        $products = DB::table('newkool_products')->select('id', 'code', 'type', 'name')->get();
 
-        return Inertia::render('Products',[
+        return Inertia::render('Products', [
             'products' => $products,
-            'name'=> 'Todos los productos'
+            'name' => 'Todos los productos'
         ]);
     }
-    public function getByType($name){
-        $products = DB::table('newkool_products')->where('tag',$name)->select('id','code','type','name')->get();
-        
-        return Inertia::render('Products',[
+    public function getByType($name)
+    {
+        $products = DB::table('newkool_products')->where('tag', $name)->select('id', 'code', 'type', 'name')->get();
+
+        return Inertia::render('Products', [
             'products' => $products,
-            'name'=> $name
-            
+            'name' => $name
+
         ]);
     }
-    public function getByTypeTag($name,$type){
-        $products = DB::table('newkool_products')->where('tag',$name)->select('id','code','type','name')->get();
-        
-        return Inertia::render('Products',[
+    public function getByTypeTag($name, $type)
+    {
+        $products = DB::table('newkool_products')
+            ->where('tag', $name)
+            ->where('type', $type)
+            ->select('id', 'code', 'type', 'name')
+            ->get();
+
+        return Inertia::render('Products', [
             'products' => $products,
-            'name'=> $name,
-            'type'=>$type
-            
+            'name' => $name,
+            'type' => $type
+
         ]);
     }
-  
-    public function getDescription($name){
-        $product = DB::table('newkool_products')->where('name', '=' , $name)->get();
+
+    public function getDescription($name)
+    {
+        $product = DB::table('newkool_products')->where('name', '=', $name)->get();
         $slider = DB::table('newkool_products')->get()->take(6)->random(6);
 
-        return Inertia::render('Description',[
+        return Inertia::render('Description', [
             'product' => $product,
-            'slider'=>$slider   
+            'slider' => $slider
         ]);
     }
 }
- 
