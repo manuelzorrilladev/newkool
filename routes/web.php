@@ -6,6 +6,10 @@ use Illuminate\Foundation\Application;
 use App\Http\Controllers\NewkoolContactsController;
 use App\Http\Controllers\NewkoolProductsController;
 use App\Http\Controllers\NewkoolUbicationsController;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,12 +30,22 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/somos-newkool',function(){
-    return Inertia::render('About') ;
+Route::get('/somos-newkool', function () {
+    return Inertia::render('About');
 });
- 
-Route::get('/catalogo', function(){
-    return Inertia::render('Catalog');
+
+Route::get('/catalogo', function () {
+    $directoryPath = public_path('/assets/catalogue-assets');
+    if (File::isDirectory($directoryPath)) {
+        $files = File::files($directoryPath);
+        $fileCount = count($files);
+    } else {
+        $fileCount = 0;
+    }
+    return Inertia::render('Catalog', [
+        'pages' => $fileCount
+
+    ]);
 });
 
 Route::get('/donde-encontrarnos', [NewkoolUbicationsController::class, 'index']);
@@ -47,8 +61,8 @@ Route::get('/linea-blanca/{name}', [NewkoolProductsController::class, 'getByType
 Route::get('/productos/{name}', [NewkoolProductsController::class, 'getDescription']);
 
 
-Route::get('/contacto', function(){
-   return Inertia::render('Contact'); 
+Route::get('/contacto', function () {
+    return Inertia::render('Contact');
 });
 Route::post('/contacto/send', [NewkoolContactsController::class, 'submit']);
 
