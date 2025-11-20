@@ -56,7 +56,7 @@ const isBorder4Visible = useElementVisibility(border4)
             <hr class="border-black w-11/12">
         </section>
         
-        <main class="w-full overflow-hidden">
+        <main class="w-full overflow-hidden font-main">
             <section 
                 ref="target1"
                 :class="isTarget1Visible ? 'opacity-100 translate-x-0':'opacity-0 -translate-x-full'"

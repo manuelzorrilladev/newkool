@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewkoolContactsController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
@@ -18,6 +19,9 @@ use Illuminate\Support\Facades\Storage;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/atencion-al-cliente/send', [NewkoolContactsController::class, 'submit']);
+
 
 Route::get('download-catalogue', function () {
     $filePath = 'catalogo-newkool-2025.pdf'; 

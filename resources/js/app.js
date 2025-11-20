@@ -43,7 +43,9 @@ import {
     faChevronDown,
     faCircleXmark,
     faBullseye,
-    faLightbulb
+    faLightbulb,
+    faBookOpen ,
+    faSpinner
 
 } from '@fortawesome/free-solid-svg-icons'
 import { faFacebookF, faInstagram, faXTwitter, faWhatsapp,faPinterest  } from '@fortawesome/free-brands-svg-icons'
@@ -54,7 +56,7 @@ library.add(
     faFacebookF,
     faInstagram,
     faAngleDown,
-    faIndustry,
+    faIndustry,                        
     faHandshake,
     faAward,
     faHandsHoldingCircle,
@@ -81,7 +83,9 @@ library.add(
     faChevronDown,
     faCircleXmark,
     faBullseye,
-    faLightbulb
+    faLightbulb,
+    faBookOpen,
+    faSpinner
 )
 
 

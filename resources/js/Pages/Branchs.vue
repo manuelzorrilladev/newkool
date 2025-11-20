@@ -62,14 +62,14 @@ function whatsappButton(name) {
                                 </div>
                                 <div class="w-full ">
                                     <a v-if="place.instagram != 'No Disponible'" :href="instagramButton(place.instagram)"
-                                        class="text-gray-600 hover:underline hover:text-newkool-red" target="_blank">@{{
+                                        class="text-newkool-gray hover:underline hover:text-newkool-red" target="_blank">@{{
                                             place.instagram }}</a>
                                     <p v-else>No Disponible</p>
                                 </div>
 
                                 <div class="w-full ">
                                     <a v-if="place.telefono != 'No Disponible'" :href="whatsappButton(place.telefono)"
-                                        class="text-gray-600 hover:underline hover:text-newkool-red" target="_blank">{{
+                                        class="text-newkool-gray hover:underline hover:text-newkool-red" target="_blank">{{
                                             place.telefono }}</a>
                                     <p v-else>No Disponible</p>
                                 </div>

@@ -4,8 +4,15 @@ import MainTemplate from '../Layouts/MainTemplate.vue';
 
 import VideoBanner from '../Custom/VideoBanner.vue';
 import axios from 'axios';
-import { ref } from 'vue';
-const notification =ref('-right-full')
+import { onMounted, ref } from 'vue';
+const props = defineProps({
+    pages: Array,
+
+})
+const notification = ref('-right-full')
+const pagesCount = ref(props.pages)
+
+
 
 function download() {
     axios.get('/api/download-catalogue', { responseType: 'blob' })
@@ -38,7 +45,7 @@ function download() {
             </Head>
             <section class="w-full flex flex-col items-center py-4">
                 <ul class="w-11/12 md:w-1/2 flex flex-col items-center gap-8 ">
-                    <li v-for="value in 35">
+                    <li v-for="value in pagesCount" :key="value" >
                         <img :src="`/assets/catalogue-assets/img-${value}.jpg`" :alt="`img-${value}`"  class="shadow-xl"/>
                     </li>
                 </ul>
@@ -68,4 +75,7 @@ function download() {
 }
 
 </style>
+
+
+
 

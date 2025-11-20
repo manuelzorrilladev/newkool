@@ -21,8 +21,8 @@ onClickOutside(target2, event => activateSection('unactive'))
 <template>
 
     <div ref="target2"
-        class=" hidden lg:flex items-start h-14 justify-between px-36 gap-20 pt-3 text-gray-500 bg-linear-to-r from-[#ededed] via-[#eeeeee] to-[#d8d8d8] w-full ">
-        <Link :href="'/'" class="">
+        class=" hidden lg:flex items-start h-14 justify-between px-36 gap-20 pt-3 text-gray-600 gradient w-full shadow-xl font-main ">
+        <Link :href="'/'">
         <ApplicationLogo class="w-44" color="fill-newkool-red" />
         </Link>
         <div class=" flex  justify-between  w-full gap-3 pb-0 pt-1">
@@ -37,18 +37,18 @@ onClickOutside(target2, event => activateSection('unactive'))
                 </div>
                 <div v-if="section !== 'unactive'" class="bg-neutral-200 space-y-2 py-4 rounded-xl  ">
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Aires-acondicionados"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('aires-acondicionados');">
                         <h2>
                             Aires Acondicionados
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Audio"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
@@ -57,75 +57,84 @@ onClickOutside(target2, event => activateSection('unactive'))
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link @mouseover="activateSection('campanas')" :href="'/linea-blanca/Campanas'"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Campanas
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Cocinas"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('cocinas')">
                         <h2>
                             Cocinas
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Congeladores"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('congeladores')">
                         <h2>
                             Congeladores
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
-                        <Link href="/linea-blanca/Dispensadores/"
+                    <div>
+                        <Link href="/linea-blanca/Dispensadores-de-agua/"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
-                            Dispensadores
+                            Dispensadores de Agua
+                        </h2>
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href="/linea-blanca/Fabricador-de-hielos/"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
+                        <h2>
+                            Fabricador de hielos
                         </h2>
                         <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
-                        <Link @mouseover="activateSection('exibidoras-vitrinas')"
+                    <div>
+                        <!-- <Link @mouseover="activateSection('exibidoras-vitrinas')"
                             :href="'/linea-blanca/Exibidoras-vitrinas'"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Exibidoras Vitrinas
-                        </Link>
+                        </Link> -->
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link @mouseover="activateSection('hornos')" :href="'/linea-blanca/hornos'"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Hornos
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Lavadoras"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('lavadoras')">
                         <h2>
                             Lavadoras
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link @mouseover="activateSection('protectores-de-voltaje')"
                             :href="'/linea-blanca/Protectores-de-voltaje'"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
@@ -133,36 +142,36 @@ onClickOutside(target2, event => activateSection('unactive'))
                         </Link>
                     </div>
 
-                    <div class="">
-                        <Link href="/linea-blanca/Refrigeradoras"
+                    <div>
+                        <Link href="/linea-blanca/Neveras"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
-                            @mouseover="activateSection('refrigeradoras')">
+                            @mouseover="activateSection('Neveras')">
                         <h2>
-                            Refrigeradoras
+                            Neveras
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link @mouseover="activateSection('topes')" :href="'/linea-blanca/Topes'"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline">
                         <h2>
                             Topes
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
 
                         </Link>
                     </div>
 
-                    <div class="">
+                    <div>
                         <Link href="/linea-blanca/Televisores"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('televisores')">
                         <h2>
                             Televisores
                         </h2>
-                        <font-awesome-icon :icon="['fas', 'chevron-right']" />
+                        <!-- <font-awesome-icon :icon="['fas', 'chevron-right']" /> -->
                         </Link>
                     </div>
 
@@ -184,10 +193,10 @@ onClickOutside(target2, event => activateSection('unactive'))
 
 
 
-                <section v-if="section !== 'unactive'">
+                <!-- <section v-if="section !== 'unactive'">
 
                     <div v-if="section === 'aires-acondicionados'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[57px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[57px] left-6 flex flex-col">
 
                         <Link :href="'/linea-blanca/Aires-acondicionados/ventana'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
@@ -208,7 +217,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div v-if="section === 'cocinas'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[165px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[165px] left-6 flex flex-col">
                         <Link :href="'/linea-blanca/Cocinas/cocina-gas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Gas
@@ -220,7 +229,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div v-if="section === 'congeladores'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[200px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[200px] left-6 flex flex-col">
                         <Link href="/linea-blanca/Congeladores/verticales"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Verticales
@@ -232,7 +241,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div v-if="section === 'hornos'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[295px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[295px] left-6 flex flex-col">
                         <Link :href="'/linea-blanca/Hornos/hornos-a-gas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Gas
@@ -244,7 +253,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div v-if="section === 'lavadoras'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[330px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[330px] left-6 flex flex-col">
                         <Link :href="'/linea-blanca/Lavadoras/doble-tina'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Doble Tina
@@ -268,40 +277,40 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
 
-                    <div v-if="section === 'refrigeradoras'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[390px] left-2 flex flex-col">
-                        <Link :href="'/linea-blanca/Refrigeradoras/sin-escarcha'"
+                    <div v-if="section === 'Neveras'" ref="target"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[390px] left-6 flex flex-col">
+                        <Link :href="'/linea-blanca/Neveras/sin-escarcha'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Sin Escarcha
                         </Link>
-                        <Link :href="'/linea-blanca/Refrigeradoras/semi-escarcha'"
+                        <Link :href="'/linea-blanca/Neveras/semi-escarcha'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Semi Escarcha
                         </Link>
-                        <Link :href="'/linea-blanca/Refrigeradoras/side-by-side'"
+                        <Link :href="'/linea-blanca/Neveras/side-by-side'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Side by Side (Dos puertas)
                         </Link>
-                        <Link :href="'/linea-blanca/Refrigeradoras/ejecutivas'"
+                        <Link :href="'/linea-blanca/Neveras/ejecutivas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Ejecutivas / Mini Bares
                         </Link>
                     </div>
 
                     <div v-if="section === 'topes'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[420px] left-2 flex flex-col">
-                        <Link :href="'/linea-blanca/Refrigeradoras/topes-a-gas'"
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[420px] left-6 flex flex-col">
+                        <Link :href="'/linea-blanca/Neveras/topes-a-gas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Gas
                         </Link>
-                        <Link :href="'/linea-blanca/Refrigeradoras/topes-electricos'"
+                        <Link :href="'/linea-blanca/Neveras/topes-electricos'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Eléctricos
                         </Link>
                     </div>
 
                     <div v-if="section === 'televisores'" ref="target"
-                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[450px] left-2 flex flex-col">
+                        class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[450px] left-6 flex flex-col">
                         <Link :href="'/linea-blanca/Televisores/bases-Televisores'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Bases para Televisores
@@ -323,13 +332,13 @@ onClickOutside(target2, event => activateSection('unactive'))
 
 
 
-                </section>
+                </section> -->
 
             </div>
 
-            <Link @mouseenter="activateSection('unactive')" :href="'/contacto'"
+            <Link @mouseenter="activateSection('unactive')" :href="'/atencion-al-cliente'"
                 class="whitespace-nowrap px-10  rounded-3xl  duration-200 mb-6">
-            Contacto
+            Atención al cliente
             </Link>
 
 
@@ -345,4 +354,10 @@ onClickOutside(target2, event => activateSection('unactive'))
 
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.gradient{
+    background: linear-gradient(98deg,rgba(202, 202, 202, 1) 0%, rgb(255, 255, 255) 50%, rgba(196, 196, 196, 1) 100%)
+}
+
+</style>

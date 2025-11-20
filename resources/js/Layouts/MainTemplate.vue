@@ -12,7 +12,7 @@ import WhatsApp from '../Custom/Whatsapp.vue';
         <Navbar/>
         <slot></slot>
         <Footer/> 
-        <ChatBot/>
+        <!-- <ChatBot/> -->
         <WhatsApp/>
     </main>
 </template>

@@ -10,7 +10,11 @@ class NewkoolProductsController extends Controller
 {
     public function getAll()
     {
-        $products = DB::table('newkool_products')->select('id', 'code', 'type', 'name')->get();
+        $products = DB::table('newkool_products')
+            ->where('toggle', 1)
+            ->select('id', 'code', 'type', 'name')
+            ->orderBy('code')
+            ->get();
 
         return Inertia::render('Products', [
             'products' => $products,
@@ -19,7 +23,13 @@ class NewkoolProductsController extends Controller
     }
     public function getByType($name)
     {
-        $products = DB::table('newkool_products')->where('tag', $name)->select('id', 'code', 'type', 'name')->get();
+        $products = DB::table('newkool_products')
+            ->where('toggle', 1)
+            ->where('tag', $name)
+            ->select('id', 'code', 'type', 'name')
+            ->orderBy('type')
+            ->orderBy('code')
+            ->get();
 
         return Inertia::render('Products', [
             'products' => $products,
@@ -32,6 +42,9 @@ class NewkoolProductsController extends Controller
         $products = DB::table('newkool_products')
             ->where('tag', $name)
             ->where('type', $type)
+            ->where('toggle', 1)
+            ->orderBy('type')
+            ->orderBy('code')
             ->select('id', 'code', 'type', 'name')
             ->get();
 

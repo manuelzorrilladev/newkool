@@ -4,8 +4,8 @@ Datos personales: <br><br>
 
 Nombre: {{ $data['name'] }} <br>
 Email: {{ $data['email'] }} <br>
-Numero de teléfono: {{ $data['phone'] }} <br>
-Subject: {{ $data['subject'] }} <br>
-Message: {{ $data['message'] }} <br><br>
+Numero de teléfono: {{ $data['phone'] }} <br><br>
 
-Thanks
+<h2><i>Mensaje: {{ $data['message'] }}</i> <br><br></h2>
+
+<strong>ESTE MENSAJE ES AUTOMATICO, FAVOR NO RESPONDER. EN CASO DE NECESITAR RESPONDER, ELIJA UNO DE LOS METODOS DE CONTACTOS ASIGNADOS EN ESTE MENSAJE.</strong>

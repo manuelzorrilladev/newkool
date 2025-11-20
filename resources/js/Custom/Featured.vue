@@ -61,7 +61,7 @@ import { Link } from '@inertiajs/vue3';
                     <img src="/assets/products-images/NKCO157MI-1.webp" alt=""
                         class="w-64 p-4 group-hover:scale-110 duration-200">
                     <header class="flex flex-col items-center md:items-end text-center md:text-right ">
-                        <h2 class="font-bold  text-5xl text-newkool-red font-newkool">Bocinas</h2>
+                        <h2 class="font-bold  text-5xl text-newkool-red font-newkool">Cornetas</h2>
                         <h2 class="  text-2xl "></h2>
                         <img src="/assets/route-images/slider/audio.png" alt="cocina-icono" class="w-10">
                     </header>

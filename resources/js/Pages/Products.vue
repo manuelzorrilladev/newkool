@@ -63,24 +63,15 @@ function capitalize(string) {
             <title>Productos</title>
             <meta name="description" content="Newkoolamerica.com">
         </Head>
-        <div class="relative">
-            <div>
-                <img :src="`/assets/category-banners/${name.toLowerCase()}.jpg`" alt=""
-                    class="hidden md:block">
-                <img :src="`/assets/category-banners/${name.toLowerCase()}-mobile.jpg`" alt=""
-                    class="block md:hidden w-full">
+        
 
-            </div>
-           
-        </div>
-
-        <section class="min-h-screen mt-10">
+        <section class="min-h-screen mt-10 font-main">
 
             <div class="flex items-center justify-center flex-col pb-8 ">
-                <div class="text-3xl md:text-5xl font-bold text-newkool-red">
+                <div class="text-3xl md:text-5xl font-bold text-neutral-600">
                     {{ replaceLine(name)}}
                 </div>
-                <div v-if="type" class="text-xl md:text-4xl font-bold text-newkool-red ">
+                <div v-if="type" class="text-xl md:text-4xl font-bold text-neutral-600">
                     {{ capitalize(replaceLine(type))}}
                 </div>
 
@@ -88,9 +79,9 @@ function capitalize(string) {
                     class="grid rounded-lg bg-white my-8 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 place-items-center place-content-center gap-2 w-11/12">
                     <div v-for="(item, index) in productsInPage" :key="index">
                         <div v-if="setShow(index + 1)"
-                            class=" py-10  flex flex-col items-center border border-white rounded-md hover:border-newkool-red px-10 group duration-200 ">
+                            class=" py-10  flex flex-col items-center border border-white rounded-md hover:border-newkool-gray px-10 group duration-200 ">
                             <img :src="`/assets/products-images/${item.code}-1.webp`" :alt="item.type"
-                                class=" group-hover:scale-110 duration-200 pb-6 w-11/12">
+                                class=" group-hover:scale-110 duration-200 pb-6 w-auto object-cover h-72 ">
                             <h2 class="relative z-10 text-center text-sm font-light">{{ item.name }}</h2>
                             <Link :href="`/productos/${item.name}`"
                                 class=" text-lg px-5 mt-4  border-newkool-red border bg-newkool-red text-white hover:text-newkool-red hover:bg-white duration-300 rounded-3xl ">

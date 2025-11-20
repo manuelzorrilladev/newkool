@@ -33,7 +33,7 @@ function changeSubOption(pos) {
 
 <template>
     <div @focusout="toggleNav()"
-        class="flex flex-col items-center justify-center h-24   text-gray-600 lg:hidden absolute top-0 w-full  z-20">
+        class="flex flex-col items-center justify-center h-24   text-newkool-gray lg:hidden absolute top-0 w-full  z-20">
         <div class="flex flex-row items-center justify-around w-full bg-white h-full">
             <Link :href="'/'">
 

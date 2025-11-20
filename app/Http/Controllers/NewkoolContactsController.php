@@ -12,34 +12,24 @@ use App\Mail\contact;
 class NewkoolContactsController extends Controller
 {
 
-    
-    public function submit(Request $request){
-            // $requestItems =  $request->all()["_value"];
-            // Mail::to("mzorrilla.sidigital@gmail.com")->send(new contact(
-            //     $requestItems["name"],
-            //     $requestItems["email"],
-            //     $requestItems["phone"],
-            //     $requestItems["subject"],
-            //     $requestItems["message"],
-            // ));
-            $data=[
-                'name'=> $request->all()["_value"]['name'],
-                'email'=> $request->all()["_value"]['email'],
-                'phone'=> $request->all()["_value"]['phone'],
-                'subject'=> $request->all()["_value"]['subject'],
-                'message'=> $request->all()["_value"]['message']
-            ];
 
-            Mail::to("mzorrilla.sidigital@gmail.com")->send(new contact($data));
+    public function submit(Request $request): RedirectResponse
+    {
+        $to_send = $request->all()['toSend'];
+        $type = $request->all()['type'];
+        $data = [
+            'name' => $request->all()['name'],
+            'email' => $request->all()['email'],
+            'phone' => $request->all()['phone'],
+            'subject' => $request->all()['subject'],
+            'message' => $request->all()['message'],
+            
+        ];
+
+        Mail::to($to_send)->send(new contact($data));
+        $return_route = $type== 'atencion'? '/atencion-al-cliente' : '/servicio-tecnico';
 
 
-            return to_route('contacto',[
-                 'message'=>'Mensaje enviado con exito'
-            ]);
-        // return Inertia::render('Contact',[
-        //     'message'=>'Mensaje enviado con exito'
-        // ]);
+        return redirect($return_route)->with('message', 'mensaje enviado con exito');
     }
-    
-
 }

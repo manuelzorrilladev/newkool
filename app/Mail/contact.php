@@ -19,21 +19,18 @@ class contact extends Mailable
      */
     public function __construct(
         public $data
-    )
-    {
-       
-    }
+    ) {}
 
     /**
      * Get the message envelope.
      */
-        // public function envelope($email, $subject, $name): Envelope
-        // {
-        //     return new Envelope(
-        //         // from: new Address($email, $name),
-        //         // subject: $subject,
-        //     );
-        // }
+    // public function envelope($email, $subject, $name): Envelope
+    // {
+    //     return new Envelope(
+    //         // from: new Address($email, $name),
+    //         // subject: $subject,
+    //     );
+    // }
     public function envelope(): Envelope
     {
         return new Envelope(
@@ -48,7 +45,7 @@ class contact extends Mailable
     public function content(): Content
     {
         return new Content(
-            view:''
+            view: ''
         );
     }
 
@@ -62,10 +59,11 @@ class contact extends Mailable
         return [];
     }
 
-    public function build(){
+    public function build()
+    {
         return $this->view('mail')
-                    ->subject('Nuevo Mensaje')
-                    ->from('mzorrilla.sidigital@gmail.com')
-                    ->with('data',$this->data);
+            ->subject('Nuevo Mensaje: ' . $this->data["subject"])
+            ->from('web-no-reply@newkoolamerica.com')
+            ->with('data', $this->data);
     }
 }

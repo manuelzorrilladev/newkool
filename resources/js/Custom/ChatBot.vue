@@ -97,7 +97,7 @@ function testClick() {
           <img src="/assets/favicon.png" alt="" class="w-10 h-10  rounded-full bg-white">
           <div class="ml-4 bg-white p-4 rounded-xl">
             <p class="text-lg font-semibold text-gray-800">NewKool Comercial</p>
-            <p class="text-sm text-gray-600" v-html="item.text"></p>
+            <p class="text-sm text-newkool-gray" v-html="item.text"></p>
           </div>
         </div>
       </div>
