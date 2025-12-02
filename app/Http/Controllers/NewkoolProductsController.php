@@ -13,6 +13,8 @@ class NewkoolProductsController extends Controller
         $products = DB::table('newkool_products')
             ->where('toggle', 1)
             ->select('id', 'code', 'type', 'name')
+            ->orderBy('tag')
+            ->orderBy('type')
             ->orderBy('code')
             ->get();
 
@@ -41,7 +43,7 @@ class NewkoolProductsController extends Controller
     {
         $products = DB::table('newkool_products')
             ->where('tag', $name)
-            ->where('type', $type)
+            ->where('type', 'like',"%$type%")
             ->where('toggle', 1)
             ->orderBy('type')
             ->orderBy('code')

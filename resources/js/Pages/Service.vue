@@ -64,7 +64,10 @@ function submit() {
 
 
 
-
+        <div>
+            <img src="/assets/route-images/service/banner-service.jpg" alt="" class="hidden md:block">
+            <img src="/assets/route-images/service/banner-service-mobile.jpg" alt="" class="block md:hidden w-full">
+        </div>
        
         <div class="text-3xl md:text-5xl font-bold text-neutral-600 uppercase font-main text-shadow text-center py-14 tracking-widest">
             Servicio técnico
@@ -121,7 +124,7 @@ function submit() {
                             <a href="https://api.whatsapp.com/send?phone=584148811719&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos." class=" py-4 text-center  w-sm border border-neutral-600 bg-neutral-600 text-2xl text-white rounded-xl duration-200 hover:text-neutral-600 hover:bg-white">Contactar</a>
                         </header>
                     </div>
-                    <img src="/assets/route-images/service/service-1.png" alt=""
+                    <img src="/assets/route-images/service/service-1.jpg" alt=""
                         class="md:w-1/2 rounded-2xl border border-neutral-600">
                 </div>
             </section>
@@ -171,7 +174,7 @@ function submit() {
                         </header>
                     </div>
 
-                    <img src="/assets/route-images/service/service-2.png" alt=""
+                    <img src="/assets/route-images/service/service-2.jpg" alt=""
                         class="md:w-1/2 rounded-2xl border border-neutral-600">
                 </div>
             </section>

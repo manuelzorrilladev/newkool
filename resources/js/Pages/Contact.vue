@@ -51,6 +51,12 @@ function submit() {
             <title>Atención al cliente</title>
             <meta name="description" content="Newkoolamerica.com">
         </Head>
+
+        
+        <div>
+            <img src="/assets/route-images/banner-contact.jpg" alt="" class="hidden md:block">
+            <img src="/assets/route-images/banner-contact-mobile.jpg" alt="" class="block md:hidden w-full">
+        </div>
         <Transition name="slide">
             <div v-if="message.length >0" class="fixed z-[9999] top-10 py-2 px-4 border-white bg-newkool-red font-main text-lg font-bold text-white rounded-r-lg">
             {{ message }} asdasdasd

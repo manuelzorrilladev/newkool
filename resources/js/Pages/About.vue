@@ -47,7 +47,7 @@ const isBorder4Visible = useElementVisibility(border4)
             ]"
             style="background: linear-gradient(to right, rgba(255,255,255,0.95) 15%, rgba(255,255,255,0.0) 100%);"
         >
-                <h1 class="text-newkool-red text-xl  md:text-3xl lg:text-5xl font-bold">Somos Newkool</h1>
+                <h1 class="text-newkool-gray text-xl  md:text-3xl lg:text-5xl font-bold">Somos Newkool</h1>
                 <p class="md:text-xl font-light">Calidad Innovadora a tu Alcance.</p>
             </header>
         </section>
@@ -66,7 +66,7 @@ const isBorder4Visible = useElementVisibility(border4)
                 class="flex flex-col md:flex-row items-center w-11/12">
                     <div ref="border1" class="h-full w-0.5"></div>
                     <header class="md:w-1/2 space-y-5 mb-10 md:mr-15">
-                        <h2 class="font-bold text-newkool-red text-5xl md:text-right">Quienes somos</h2>
+                        <h2 class="font-bold text-newkool-gray text-5xl md:text-right">Quienes somos</h2>
                         <p class="font-light md:w-3/3 text-gray-700 md:text-right">En Newkool, somos más que una marca de
                             electrodomésticos; somos un compromiso con la mejora de la vida en cada hogar venezolano.
                             Nos dedicamos a ofrecer productos que no solo cumplen, sino que superan las expectativas en
@@ -102,7 +102,7 @@ const isBorder4Visible = useElementVisibility(border4)
                     <div ref="border2" class="h-full w-0.5"></div>
                     <header class="md:w-1/2 space-y-5 mb-10 md:ml-15">
                         <div
-                            class="flex flex-row-reverse md:flex-row items-center text-newkool-red gap-5 w-11/12">
+                            class="flex flex-row-reverse md:flex-row items-center text-newkool-gray gap-5 w-11/12">
                             <h2 class="font-bold text-5xl md:text-left">Nuestra Misión</h2><svg
                                 class="svg-inline--fa fa-bullseye text-5xl p-3 rounded-full bg-gray-200"
                                 aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bullseye" role="img"
@@ -146,7 +146,7 @@ const isBorder4Visible = useElementVisibility(border4)
                     <div ref="border3" class="h-full w-0.5"></div>
                     <header class="md:w-1/2 space-y-5 mb-10 md:mr-15">
                         <div
-                            class="flex flex-row-reverse md:flex-row justify-end items-center text-newkool-red gap-5 w-12/12">
+                            class="flex flex-row-reverse md:flex-row justify-end items-center text-newkool-gray gap-5 w-12/12">
                             <h2 class="font-bold text-5xl md:text-right">Nuestra Visión</h2>
                             <svg
                                 class="svg-inline--fa fa-lightbulb text-5xl py-3 px-4 rounded-full bg-gray-200"
@@ -190,8 +190,8 @@ const isBorder4Visible = useElementVisibility(border4)
                 class="flex flex-col md:flex-row-reverse items-center w-11/12 gap-4">
                     <div ref="border4" class="h-full w-0.5"></div>
                     <header class="md:w-1/2 space-y-5 mb-10 md:ml-15">
-                        <h2 class="font-bold text-newkool-red text-5xl w-10/12">Nuestros Valores</h2>
-                        <p class="font-light md:w-10/12 text-gray-700 text-left"><strong
+                        <h2 class="font-bold text-newkool-gray text-5xl w-10/12">Nuestros Valores</h2>
+                        <p class="font-light md:w-full text-gray-700 text-left"><strong
                                 class="font-bold">Calidad:</strong><br> Es el pilar de todo lo que hacemos. Nos
                             comprometemos a ofrecer productos que no solo sean funcionales y eficientes, sino que
                             también estén construidos para perdurar, superando los más altos estándares de calidad en
@@ -209,7 +209,7 @@ const isBorder4Visible = useElementVisibility(border4)
                     </header>
                     <div 
                     :class="isBorder4Visible ? 'opacity-100 scale-100':'opacity-0 scale-0'"
-                    class="flex justify-center duration-500">
+                    class="flex justify-center duration-500 w-1/2">
                         <div class="space-y-4">
                             <img src="/assets/route-images/somos-newkool/4-desktop.jpg" alt=""
                                 class="bg-neutral-200 p-4 rounded-xl duration-500 delay-200 hidden md:block border-2 border-newkool-red">

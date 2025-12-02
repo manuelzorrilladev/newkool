@@ -52,6 +52,7 @@ const breakpoints = {
     },
 }
 
+const cleanString = (string) => string.replace(/[-0-9]/g, ' ')
 
 function replaceLine(string){
     return string.replaceAll("-"," ")
@@ -86,7 +87,7 @@ function getTableContent(item, char) {
             </Head>
     
             <h2 class="text-neutral-600 font-bold tracking-widest text-center text-6xl uppercase pt-8 font-main">
-                {{ replaceLine(product[0].tag)}}
+                {{ cleanString(product[0].tag)}}
             </h2>
             <section class="min-h-screen font-main">
                 <div class=" flex justify-center  my-8">
@@ -122,8 +123,10 @@ function getTableContent(item, char) {
                         </div>
                         <aside class="h-[75vh] rounded-md w-full  lg:w-2/5 flex flex-col items-center justify-center  mx-4">
                             <header class=" sm:w-1/2 md:w-1/2  lg:w-10/12">
-                                <h2 class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
-                                   {{ replaceLine(product[0].tag)}}</h2>
+                                <h2 v-if="product[0].tag !='Audio'" class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
+                                   {{ cleanString(product[0].type)}}</h2>
+                                <!--<h2 v-else class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
+                                   Corneta</h2> -->
                                 <p class=" text-neutral-600 text-2xl">Modelo: {{ product[0].code }}</p>
                                 <ul class="  rounded-md text-neutral-600 ">
     

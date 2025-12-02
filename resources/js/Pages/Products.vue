@@ -46,6 +46,7 @@ function pageHandler(page) {
 
     }
 }
+const cleanString = (string) => string.replace(/[-0-9]/g, ' ')
 
 function replaceLine(string){
     return string.replaceAll("-"," ")
@@ -69,10 +70,10 @@ function capitalize(string) {
 
             <div class="flex items-center justify-center flex-col pb-8 ">
                 <div class="text-3xl md:text-5xl font-bold text-neutral-600">
-                    {{ replaceLine(name)}}
+                    {{ cleanString(name)}}
                 </div>
                 <div v-if="type" class="text-xl md:text-4xl font-bold text-neutral-600">
-                    {{ capitalize(replaceLine(type))}}
+                    {{ capitalize(cleanString(type))}}
                 </div>
 
                 <div v-if="productsInPage.length > 0"
