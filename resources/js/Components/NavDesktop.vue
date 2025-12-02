@@ -50,6 +50,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link href="/linea-blanca/9-Audio"
+                        @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Audio
@@ -59,6 +60,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link :href="'/linea-blanca/Campanas'"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Campanas
                         </Link>
@@ -66,6 +68,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link href="/linea-blanca/2-Cocinas"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Cocinas
@@ -84,9 +87,20 @@ onClickOutside(target2, event => activateSection('unactive'))
                         <font-awesome-icon :icon="['fas', 'chevron-right']" />
                         </Link>
                     </div>
+                    <div>
+                        <Link href="/linea-blanca/Cortina-de-aire"
+                         @mouseover="activateSection('productos')"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                            >
+                        <h2>
+                            Cortina de Aire
+                        </h2>
+                        </Link>
+                    </div>
 
                     <div>
                         <Link href="/linea-blanca/4-Dispensadores-de-agua/"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Dispensadores de Agua
@@ -95,6 +109,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
                     <div>
                         <Link href="/linea-blanca/8-Fabricador-de-hielo/"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Fabricador de hielo
@@ -105,6 +120,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link :href="'/linea-blanca/hornos'"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Hornos
@@ -123,9 +139,20 @@ onClickOutside(target2, event => activateSection('unactive'))
                         <font-awesome-icon :icon="['fas', 'chevron-right']" />
                         </Link>
                     </div>
+                    <div>
+                        <Link href="/linea-blanca/Microondas"
+                         @mouseover="activateSection('productos')"
+                            class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
+                           >
+                        <h2>
+                            Microondas
+                        </h2>
+                        </Link>
+                    </div>
 
                     <div>
                         <Link :href="'/linea-blanca/911-Protectores-de-voltaje'"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Protectores de Voltaje
                         </Link>
@@ -144,6 +171,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link :href="'/linea-blanca/Topes'"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline">
                         <h2>
                             Topes
@@ -155,6 +183,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link href="/linea-blanca/910-Televisores"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Televisores
@@ -165,6 +194,7 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div>
                         <Link href="/linea-blanca/7-Vitrinas-verticales"
+                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
                             Vitrinas Verticales

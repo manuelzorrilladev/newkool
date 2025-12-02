@@ -124,7 +124,7 @@ function getTableContent(item, char) {
                         <aside class="h-[75vh] rounded-md w-full  lg:w-2/5 flex flex-col items-center justify-center  mx-4">
                             <header class=" sm:w-1/2 md:w-1/2  lg:w-10/12">
                                 <h2 v-if="product[0].tag !='Audio'" class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
-                                   {{ cleanString(product[0].type)}}</h2>
+                                   </h2>
                                 <!--<h2 v-else class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
                                    Corneta</h2> -->
                                 <p class=" text-neutral-600 text-2xl">Modelo: {{ product[0].code }}</p>
