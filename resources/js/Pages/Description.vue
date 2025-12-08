@@ -151,11 +151,11 @@ function getTableContent(item, char) {
                         <h2 class="text-neutral-600 font-bold tracking-widest text-center text-6xl uppercase pt-8">Productos
                             relacionados </h2>
                         <Carousel :breakpoints="breakpoints">
-                            <Slide v-for="slide in slider" :key="slide" class="py-4 px-4">
+                            <Slide v-for="slide in slider" :key="slide" class="py-4">
                                 <div
                                     class="flex flex-col w-10/12 rounded-xl  items-center gap-2 border-2 border-neutral-600 hover:scale-105 duration-200 shadow-lg py-4 bg-white mt-4">
                                     <img :src="`/assets/products-images/${slide.code}-1.webp`" :alt="slide.type"
-                                        class=" w-auto object-cover h-72">
+                                        class=" w-auto object-cover h-60 ">
                                     <h2 class="w-full text-center text-neutral-600  py-1 text-xl uppercase">modelo:{{
                                         slide.code }}</h2>
                                     <Link :href="`/productos/${slide.name}`"

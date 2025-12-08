@@ -49,7 +49,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link href="/linea-blanca/9-Audio"
+                        <Link href="/linea-blanca/910-Audio"
                         @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
@@ -88,7 +88,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                         </Link>
                     </div>
                     <div>
-                        <Link href="/linea-blanca/Cortina-de-aire"
+                        <Link href="/linea-blanca/5-Cortina-de-aire"
                          @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             >
@@ -108,7 +108,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                         </Link>
                     </div>
                     <div>
-                        <Link href="/linea-blanca/8-Fabricador-de-hielo/"
+                        <Link href="/linea-blanca/9-Fabricador-de-hielo/"
                          @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
@@ -130,7 +130,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link href="/linea-blanca/5-Lavadoras"
+                        <Link href="/linea-blanca/6-Lavadoras"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('lavadoras')">
                         <h2>
@@ -151,7 +151,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link :href="'/linea-blanca/911-Protectores-de-voltaje'"
+                        <Link :href="'/linea-blanca/912-Protectores-de-voltaje'"
                          @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8  hover:underline  duration-200 h-10  w-full">
                         Protectores de Voltaje
@@ -159,7 +159,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link href="/linea-blanca/6-Neveras"
+                        <Link href="/linea-blanca/7-Neveras"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline "
                             @mouseover="activateSection('Neveras')">
                         <h2>
@@ -182,7 +182,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link href="/linea-blanca/910-Televisores"
+                        <Link href="/linea-blanca/911-Televisores"
                          @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
@@ -193,7 +193,7 @@ onClickOutside(target2, event => activateSection('unactive'))
                     </div>
 
                     <div>
-                        <Link href="/linea-blanca/7-Vitrinas-verticales"
+                        <Link href="/linea-blanca/8-Vitrinas-verticales"
                          @mouseover="activateSection('productos')"
                             class="whitespace-nowrap cursor-pointer px-8   flex justify-between space-x-2 items-center hover:underline ">
                         <h2>
@@ -260,16 +260,16 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div v-if="section === 'lavadoras'" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[330px] left-8 flex flex-col">
-                        <Link :href="'/linea-blanca/5-Lavadoras/doble-tina'"
+                        <Link :href="'/linea-blanca/6-Lavadoras/doble-tina'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Doble Tina
                         </Link>
-                        <Link :href="'/linea-blanca/5-Lavadoras/automaticas'"
+                        <Link :href="'/linea-blanca/6-Lavadoras/automaticas'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Automáticas
                         </Link>
 
-                        <Link :href="'/linea-blanca/5-Lavadoras/lavaseca'"
+                        <Link :href="'/linea-blanca/6-Lavadoras/lavaseca'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Lavaseca
                         </Link>
@@ -279,11 +279,11 @@ onClickOutside(target2, event => activateSection('unactive'))
 
                     <div v-if="section === 'Neveras'" ref="target"
                         class="bg-neutral-200 space-y-6 py-4 rounded-xl absolute top-[390px] left-8 flex flex-col">
-                        <Link :href="'/linea-blanca/6-Neveras/top-mount'"
+                        <Link :href="'/linea-blanca/7-Neveras/top-mount'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Top Mount
                         </Link>
-                        <Link :href="'/linea-blanca/6-Neveras/side-by-side'"
+                        <Link :href="'/linea-blanca/7-Neveras/side-by-side'"
                             class="whitespace-nowrap px-10  rounded-3xl  duration-200 hover:underline">
                         Side by Side
                         </Link>

@@ -22,23 +22,23 @@ defineProps({
 const items = ref([
 
     { src: "/assets/route-images/slider/aires.png", name: "Aires Acondicionados", link: "/linea-blanca/1-Aires-acondicionados" },
-    { src: "/assets/route-images/slider/audio.png", name: "Audio", link: "/linea-blanca/9-Audio" },
-    { src: "/assets/route-images/slider/base-tv.png", name: "Base de TV", link: "/linea-blanca/910-Televisores/2-base" },
+    { src: "/assets/route-images/slider/audio.png", name: "Audio", link: "/linea-blanca/910-Audio" },
+    { src: "/assets/route-images/slider/base-tv.png", name: "Base de TV", link: "/linea-blanca/911-Televisores/2-base" },
     { src: "/assets/route-images/slider/campana.png", name: "Campanas", link: "/linea-blanca/Campanas" },
     { src: "/assets/route-images/slider/cocina.png", name: "Cocinas", link: "/linea-blanca/2-Cocinas" },
     { src: "/assets/route-images/slider/congelador.png", name: "Congeladores", link: "/linea-blanca/3-Congeladores" },
-    { src: "/assets/route-images/slider/cortinas-de-aire.png", name: "Cortinas de Aire", link: "/linea-blanca/Cortinas-de-aire" },
-    { src: "/assets/route-images/slider/dispensador.png", name: "Dispensadores", link: "/linea-blanca/4-Dispensadores-de-agua" },
-    { src: "/assets/route-images/slider/fabricador-de-hielo.png", name: "Fabricador de Hielo", link: "/linea-blanca/8-Fabricador-de-hielo" },
+    { src: "/assets/route-images/slider/cortina-de-aire.png", name: "Cortina de Aire", link: "/linea-blanca/5-Cortina-de-aire" },
+    { src: "/assets/route-images/slider/dispensador.png", name: "Dispensadores de agua", link: "/linea-blanca/4-Dispensadores-de-agua" },
+    { src: "/assets/route-images/slider/fabricador-de-hielo.png", name: "Fabricador de Hielo", link: "/linea-blanca/9-Fabricador-de-hielo" },
 
     // { src: "/assets/route-images/slider/horno.png", name: "Hornos", link: "/linea-blanca/Hornos" },
-    { src: "/assets/route-images/slider/lavadora.png", name: "Lavadoras", link: "/linea-blanca/5-Lavadoras" },
+    { src: "/assets/route-images/slider/lavadora.png", name: "Lavadoras", link: "/linea-blanca/6-Lavadoras" },
     { src: "/assets/route-images/slider/microondas.png", name: "Microondas", link: "/linea-blanca/Microondas" },
-    { src: "/assets/route-images/slider/nevera.png", name: "Neveras", link: "/linea-blanca/6-Neveras" },
+    { src: "/assets/route-images/slider/nevera.png", name: "Neveras", link: "/linea-blanca/7-Neveras" },
     // { src: "/assets/route-images/slider/tope.png", name: "Topes", link: "/linea-blanca/Topes" },
-    { src: "/assets/route-images/slider/protector.png", name: "Protectores de voltaje", link: "/linea-blanca/911-Protectores-de-voltaje" },
-    { src: "/assets/route-images/slider/tv.png", name: "Televisores", link: "/linea-blanca/910-Televisores" },
-    { src: "/assets/route-images/slider/vitrinas.png", name: "Vitrinas verticales", link: "/linea-blanca/7-Vitrinas-verticales" }
+    { src: "/assets/route-images/slider/protector.png", name: "Protectores de voltaje", link: "/linea-blanca/912-Protectores-de-voltaje" },
+    { src: "/assets/route-images/slider/tv.png", name: "Televisores", link: "/linea-blanca/911-Televisores" },
+    { src: "/assets/route-images/slider/vitrinas.png", name: "Vitrinas verticales", link: "/linea-blanca/8-Vitrinas-verticales" }
 ])
 
 

@@ -72,7 +72,7 @@ function capitalize(string) {
                 <div class="text-3xl md:text-5xl font-bold text-neutral-600">
                     {{ cleanString(name)}}
                 </div>
-                <div v-if="type" class="text-xl md:text-4xl font-bold text-neutral-600 capitalize">
+                <div v-if="type" class="text-3xl md:text-5xl font-bold text-neutral-600 capitalize">
                     {{ capitalize(cleanString(type))}}
                 </div>
 

@@ -143,8 +143,7 @@ function submit() {
 
                         <div class="sm:col-span-2">
                             <label for="message"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Tu
-                                mensaje</label>
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Mensaje</label>
                             <textarea id="message" rows="6"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-xl shadow-xs border border-gray-300 focus:ring-neutral-600 focus:border-neutral-600 "
                                 placeholder="Deja tu comentario..." v-model="mail.message"></textarea>

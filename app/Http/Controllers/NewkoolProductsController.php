@@ -43,7 +43,7 @@ class NewkoolProductsController extends Controller
     {
         $products = DB::table('newkool_products')
             ->where('tag', $name)
-            ->where('type', 'like',"%$type%")
+            ->where('type', 'like', "%$type%")
             ->where('toggle', 1)
             ->orderBy('type')
             ->orderBy('code')
@@ -60,8 +60,16 @@ class NewkoolProductsController extends Controller
 
     public function getDescription($name)
     {
-        $product = DB::table('newkool_products')->where('name', '=', $name)->get();
-        $slider = DB::table('newkool_products')->get()->take(6)->random(6);
+        $product = DB::table('newkool_products')
+            ->where('name',  $name)
+            ->get();
+        $product_line = $product[0]
+            ->line;
+        $slider = DB::table('newkool_products')
+            ->where('line',$product_line)
+            ->get()
+            ->take(6)
+            ->random(6);
 
         return Inertia::render('Description', [
             'product' => $product,
