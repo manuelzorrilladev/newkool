@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/atencion-al-cliente/send', [NewkoolContactsController::class, 'submit']);
+Route::post('/servicio-tecnico/send', [NewkoolContactsController::class, 'service_submit']);
 
 
 Route::get('download-catalogue', function () {

@@ -59,6 +59,7 @@ class contact extends Mailable
         return [];
     }
 
+    
     public function build()
     {
         return $this->view('mail')
@@ -66,4 +67,7 @@ class contact extends Mailable
             ->from('web-no-reply@newkoolamerica.com')
             ->with('data', $this->data);
     }
+
+
+    
 }

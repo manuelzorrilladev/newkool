@@ -22,8 +22,8 @@ onClickOutside(target2, event => activateSection('unactive'))
 
     <div ref="target2"
         class=" hidden lg:flex items-start h-14 justify-between px-36 gap-20 pt-3 text-gray-600 gradient w-full shadow-xl font-main ">
-        <Link :href="'/'">
-        <ApplicationLogo class="w-44" color="fill-newkool-red" />
+        <Link :href="'/'" class="w-44 block">
+        <ApplicationLogo  color="fill-newkool-red" />
         </Link>
         <div class=" flex  justify-between  w-full gap-3 pb-0 pt-1">
             <Link @mouseenter="activateSection('unactive')" :href="'/'"
