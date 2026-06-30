@@ -12,8 +12,9 @@ defineProps({
     slider: Array,
 });
 
-// const mainRoute = 'http://127.0.0.1:8000'
-const mainRoute = 'https://testing.newkoolamerica.com'
+
+
+const mainRoute = import.meta.env.VITE_MAIN_ROUTE
 const status = ref({
     isError:false,
     isCurrentlySending:false
@@ -32,8 +33,10 @@ const mail = ref({
 const name = ref(null)
 const message = ref("")
 function submit() {
+console.log(mainRoute);
+
     status.value.isCurrentlySending = true
-    axios.post(`${mainRoute}/api/atencion-al-cliente/send`, mail.value).then((d)=>{
+    axios.post(`/api/atencion-al-cliente/send`, mail.value).then((d)=>{
         status.value.isCurrentlySending = false
         message.value = "Mensaje enviado!"
         setTimeout(message.value = "",3000)
@@ -52,14 +55,13 @@ function submit() {
             <meta name="description" content="Newkoolamerica.com">
         </Head>
 
-        
         <div>
             <img src="/assets/route-images/banner-contact.jpg" alt="" class="hidden md:block">
             <img src="/assets/route-images/banner-contact-mobile.jpg" alt="" class="block md:hidden w-full">
         </div>
         <Transition name="slide">
             <div v-if="message.length >0" class="fixed z-[9999] top-10 py-2 px-4 border-white bg-newkool-red font-main text-lg font-bold text-white rounded-r-lg">
-            {{ message }} asdasdasd
+            {{ message }} 
         </div>
         </Transition>
 
@@ -74,20 +76,20 @@ function submit() {
         </div>
 
         <div class="flex justify-center w-full pb-10 relative z-10 mt-10 font-main">
-            <section class="w-[85%] rounded-xl shadow-lg border-2 bg-gray-100 flex flex-col md:flex-row items-center">
+            <section class="w-[90%] rounded-xl shadow-lg border-2 bg-gray-100 flex flex-col md:flex-row items-center">
                 <div class="w-11/12 lg:w-3/5 xl:w-2/5 pt-5 md:pt-0 flex items-center justify-center  h-full">
                     <div
-                        class="rounded-xl bg-neutral-600 h-full md:h-[90%] w-full md:w-[82%] text-white flex flex-col justify-center gap-4 pb-4 md:pb-0">
-                        <h2 class=" text-3xl xl:text-5xl tracking-tight font-extrabold pt-6 pl-5  ">
+                        class="rounded-xl bg-neutral-600 h-full md:h-[90%] w-full md:w-[85%] text-white flex flex-col justify-center items-start  pb-4 md:pb-0">
+                        <h2 class=" text-3xl xl:text-4xl tracking-tight font-extrabold py-6 pl-5  ">
                             Contáctanos
                         </h2>
-                        <p class=" font-light text-justify lg:text-sm  xl:text-lg w-11/12 pl-5 ">
+                        <p class=" font-light  lg:text-md  w-11/12 pl-5 ">
                             Para atención al cliente, puedes escribir a atencionalcliente@newkoolamerica.net <br> o
                             comunicarte al número de WhatsApp
                         </p>
                         <a href="https://api.whatsapp.com/send?phone=584148811719&text=Hola%20NewKool,%20me%20gustaria%20saber%20mas%20sobre%20sus%20productos."
-                            target="_blank" class="hover:underline pl-5 w-11/12">+584148811719.</a>
-                        <p class=" lg:mb-16 font-light  lg:text-sm  xl:text-lg w-10/12 pl-5 ">
+                            target="_blank" class="hover:underline pl-5 w-11/12 text-md">+584148811719.</a>
+                        <p class=" lg:mb-16 font-light  lg:text-md w-10/12 pl-5 ">
                             Estamos ubicados en Caracas, Venezuela.
                         </p>
 

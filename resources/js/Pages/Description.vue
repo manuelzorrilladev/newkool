@@ -40,10 +40,14 @@ const carouselConfig = {
     pauseAutoplayOnHover: true,
 }
 const breakpoints = {
+    300:{
+        itemsToShow: 1,
+        snapAlign: 'start',
+    },
     // 700px and up
     700: {
         itemsToShow: 2,
-        snapAlign: 'center',
+        snapAlign: 'start',
     },
     // 1024 and up
     1024: {
@@ -86,26 +90,26 @@ function getTableContent(item, char) {
                 <meta name="description" content="Newkoolamerica.com">
             </Head>
     
-            <h2 class="text-neutral-600 font-bold tracking-widest text-center text-6xl uppercase pt-8 font-main">
+            <h2 class="text-neutral-600 font-bold tracking-widest text-center text-2xl md:text-6xl uppercase pt-8 font-main">
                 {{ cleanString(product[0].tag)}}
             </h2>
             <section class="min-h-screen font-main">
                 <div class=" flex justify-center  my-8">
                     <div
-                        class=" rounded-[80px] border-2 border-newkool-gray  bg-white p-4  w-[95%] h-fit lg:h-2/5 flex flex-col lg:flex-row items-center   ">
-                        <div class="w-3/5">
+                        class=" rounded-3xl md:rounded-[80px] border-2 border-newkool-gray  bg-white p-4  w-[95%] h-fit lg:h-2/5 flex flex-col lg:flex-row items-center   ">
+                        <div class="md:w-3/5">
                             <div v-if="product[0].imageCount == 1"
-                                class="  overflow-hidden w-full lg:w- flex flex-col items-center justify-center group">
+                                class="  overflow-hidden w-full  flex flex-col items-center justify-center group">
                                 <img :src="`/assets/products-images/${product[0].code}-1.webp`" :alt="product.type"
-                                    class="w-1/3 rounded-lg duration-200 hover:scale-110 relative z-0">
+                                    class="w-1/3 rounded-lg duration-200 hover:scale-110 relative z-0 ">
     
                             </div>
                             <div v-else
-                                class=" overflow-hidden w-full lg:w- flex flex-col items-center justify-center group gap-3">
-                                <Carousel v-model="counter" v-bind="carouselConfig" class=" w-1/2">
+                                class=" overflow-hidden w-full  flex flex-col items-center justify-center group gap-3">
+                                <Carousel v-model="counter" v-bind="carouselConfig" class=" md:w-1/2">
                                     <Slide v-for="img in parseInt(product[0].imageCount)" :key="img.id">
                                         <img :src="`/assets/products-images/${product[0].code}-${img}.webp`"
-                                            class="w-[300px]" />
+                                            class="w-full md:w-[300px]" />
                                     </Slide>
     
     
@@ -121,8 +125,8 @@ function getTableContent(item, char) {
                             </div>
     
                         </div>
-                        <aside class="h-[75vh] rounded-md w-full  lg:w-2/5 flex flex-col items-center justify-center  mx-4">
-                            <header class=" sm:w-1/2 md:w-1/2  lg:w-10/12">
+                        <aside class="md:min-h-[75vh] h-fit rounded-md w-full  lg:w-2/5 flex flex-col items-center md:justify-center pt-8 md:pt-0  mx-4">
+                            <header class=" w-11/12 md:w-1/2  lg:w-10/12">
                                 <h2 v-if="product[0].tag !='Audio'" class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
                                    </h2>
                                 <!--<h2 v-else class="font-main uppercase font-black rounded-md  text-xl md:text-5xl text-neutral-600">
@@ -145,15 +149,15 @@ function getTableContent(item, char) {
                         </aside>
                     </div>
                 </div>
-                <div class="h-fit flex justify-center">
+                <div class="w-full overflow-hidden h-fit flex justify-center">
                     <div class="   w-11/12 h-2/5 flex flex-col items-center justify-center  rounded-xl pb-8">
     
-                        <h2 class="text-neutral-600 font-bold tracking-widest text-center text-6xl uppercase pt-8">Productos
+                        <h2 class="text-neutral-600 font-bold tracking-widest text-center w-full text-4xl  md:text-6xl uppercase pt-8">Productos
                             relacionados </h2>
                         <Carousel :breakpoints="breakpoints">
-                            <Slide v-for="slide in slider" :key="slide" class="py-4">
+                            <Slide v-for="slide in slider" :key="slide" class="py-4">   
                                 <div
-                                    class="flex flex-col w-10/12 rounded-xl  items-center gap-2 border-2 border-neutral-600 hover:scale-105 duration-200 shadow-lg py-4 bg-white mt-4">
+                                    class="flex flex-col w-1/4 md:w-10/12 rounded-xl  items-center gap-2 border-2 border-neutral-600 hover:scale-105 duration-200 shadow-lg py-4 bg-white mt-4">
                                     <img :src="`/assets/products-images/${slide.code}-1.webp`" :alt="slide.type"
                                         class=" w-auto object-cover h-60 ">
                                     <h2 class="w-full text-center text-neutral-600  py-1 text-xl uppercase">modelo:{{

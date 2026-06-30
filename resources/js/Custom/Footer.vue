@@ -6,11 +6,11 @@ console.log(actualRoute);
 
 <template>
     <footer
-        class="h-fit lg:h-24 py-10 gap-6 flex  items-center justify-end bg-neutral-600 text-white relative z-30">
+        class="h-fit lg:h-24 py-10 gap-6 flex  items-center justify-center md:justify-end bg-neutral-600 text-white relative z-30">
         
 
 
-        <div class="flex flex-col md:flex-row justify-around  w-1/2 md:w-1/5 items-center">
+        <div class="flex flex-col  md:flex-row justify-around gap-4 md:gap-0  w-1/2 md:w-1/5 items-center">
 
             <h2 class="font-semibold text-xl">Síguenos en:</h2>
             <div class="flex justify-around  w-full md:w-1/2 items-center">

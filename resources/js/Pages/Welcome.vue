@@ -18,27 +18,29 @@ defineProps({
     laravelVersion: String,
     phpVersion: String,
 });
+const date = new Date
+const actualYear = date.getFullYear()
 
 const items = ref([
 
     { src: "/assets/route-images/slider/aires.png", name: "Aires Acondicionados", link: "/linea-blanca/1-Aires-acondicionados" },
-    { src: "/assets/route-images/slider/audio.png", name: "Audio", link: "/linea-blanca/910-Audio" },
-    { src: "/assets/route-images/slider/base-tv.png", name: "Base de TV", link: "/linea-blanca/911-Televisores/2-base" },
-    { src: "/assets/route-images/slider/campana.png", name: "Campanas", link: "/linea-blanca/Campanas" },
+    { src: "/assets/route-images/slider/audio.png", name: "Audio", link: "/linea-blanca/911-Audio" },
+    { src: "/assets/route-images/slider/base-tv.png", name: "Base de TV", link: "/linea-blanca/912-Audio/2-base" },
+    // { src: "/assets/route-images/slider/campana.png", name: "Campanas", link: "/linea-blanca/Campanas" },
     { src: "/assets/route-images/slider/cocina.png", name: "Cocinas", link: "/linea-blanca/2-Cocinas" },
     { src: "/assets/route-images/slider/congelador.png", name: "Congeladores", link: "/linea-blanca/3-Congeladores" },
-    { src: "/assets/route-images/slider/cortina-de-aire.png", name: "Cortina de Aire", link: "/linea-blanca/5-Cortina-de-aire" },
+    { src: "/assets/route-images/slider/cortina-de-aire.png", name: "Cortinas de Aire", link: "/linea-blanca/5-Cortinas-de-aire" },
     { src: "/assets/route-images/slider/dispensador.png", name: "Dispensadores de agua", link: "/linea-blanca/4-Dispensadores-de-agua" },
-    { src: "/assets/route-images/slider/fabricador-de-hielo.png", name: "Fabricador de Hielo", link: "/linea-blanca/9-Fabricador-de-hielo" },
+    { src: "/assets/route-images/slider/fabricador-de-hielo.png", name: "Fabricadores de Hielo", link: "/linea-blanca/910-Fabricadores-de-hielo" },
 
     // { src: "/assets/route-images/slider/horno.png", name: "Hornos", link: "/linea-blanca/Hornos" },
     { src: "/assets/route-images/slider/lavadora.png", name: "Lavadoras", link: "/linea-blanca/6-Lavadoras" },
-    { src: "/assets/route-images/slider/microondas.png", name: "Microondas", link: "/linea-blanca/Microondas" },
-    { src: "/assets/route-images/slider/nevera.png", name: "Neveras", link: "/linea-blanca/7-Neveras" },
+    { src: "/assets/route-images/slider/microondas.png", name: "Microondas", link: "/linea-blanca/7-Microondas" },
+    { src: "/assets/route-images/slider/nevera.png", name: "Neveras", link: "/linea-blanca/8-Neveras" },
     // { src: "/assets/route-images/slider/tope.png", name: "Topes", link: "/linea-blanca/Topes" },
-    { src: "/assets/route-images/slider/protector.png", name: "Protectores de voltaje", link: "/linea-blanca/912-Protectores-de-voltaje" },
-    { src: "/assets/route-images/slider/tv.png", name: "Televisores", link: "/linea-blanca/911-Televisores" },
-    { src: "/assets/route-images/slider/vitrinas.png", name: "Vitrinas verticales", link: "/linea-blanca/8-Vitrinas-verticales" }
+    { src: "/assets/route-images/slider/protector.png", name: "Protectores de voltaje", link: "/linea-blanca/913-Audio" },
+    { src: "/assets/route-images/slider/tv.png", name: "Televisores", link: "/linea-blanca/912-Audio" },
+    { src: "/assets/route-images/slider/vitrinas.png", name: "Vitrinas verticales", link: "/linea-blanca/9-Vitrinas-verticales" }
 ])
 
 
@@ -83,12 +85,12 @@ const items = ref([
     
         <div class="font-main h-fit flex flex-col items-center" ref="target">
             <h2
-                class="text-center  mt-10 font-bold text-3xl sm:text-3xl md:text-6xl text-neutral-600 uppercase px-3 md:px-20 tracking-widest  rounded-full py-5 w-10/12 md:w-2/3">
+                class="text-center  mt-10 font-bold text-5xl md:text-6xl text-neutral-600 uppercase px-3 md:px-20 tracking-widest  rounded-full py-5 w-11/12 md:w-2/3">
                 nuestro Catálogo</h2>
-            <div class=" w-full flex items-center justify-center">
-                <h3 class="text-3xl text-neutral-600 w-1/5 font-light">Para descargar nuestro catálogo de productos, por favor hacer click en el icono</h3>
-                <Link href="/catalogo" class="w-1/4">
-                    <img src="/assets/route-images/home/catalogo-icon-2.png" alt="catalogo-newkool" class=" ml-4 cursor-pointer hover:scale-110 duration-200">
+            <div class=" w-full flex flex-col md:flex-row items-center justify-center">
+                <h3 class="text-3xl text-neutral-600 w-11/12 md:w-1/5 font-light">Para descargar nuestro catálogo de productos, por favor hacer click en el icono</h3>
+                <Link href="/catalogo" class="w-11/12 md:w-1/4">
+                    <img src="/assets/route-images/home/catalogo-icon-2.png" alt="catalogo-newkool" class=" md:ml-4 cursor-pointer hover:scale-110 duration-200">
                
                 </Link>
 
@@ -103,7 +105,7 @@ const items = ref([
 
 
         <div class="font-main h-24 flex items-center justify-center text-gray-400 font-light text-center">
-            <h2 class="w-11/12">Newkool - Todos los derechos reservados 2024</h2>
+            <h2 class="w-11/12">Newkool - Todos los derechos reservados {{ actualYear }}</h2>
 
         </div>
 

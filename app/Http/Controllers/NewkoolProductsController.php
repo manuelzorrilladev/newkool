@@ -50,6 +50,7 @@ class NewkoolProductsController extends Controller
             ->select('id', 'code', 'type', 'name')
             ->get();
 
+
         return Inertia::render('Products', [
             'products' => $products,
             'name' => $name,
@@ -66,7 +67,7 @@ class NewkoolProductsController extends Controller
         $product_line = $product[0]
             ->line;
         $slider = DB::table('newkool_products')
-            ->where('line',$product_line)
+            ->where('line', $product_line)
             ->get()
             ->take(6)
             ->random(6);

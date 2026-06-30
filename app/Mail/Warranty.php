@@ -25,7 +25,7 @@ class Warranty extends Mailable
     {
         return new Envelope(
             subject: 'Nuevo Reclamo de Garantía: ' . ($this->data['issue']),
-            from: 'web-no-reply@newkoolamerica.com',
+            from: 'web-no-reply@newkoolamerica.com'
         );
     }
 
