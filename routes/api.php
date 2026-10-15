@@ -20,6 +20,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/api-health-test', function () {
+    return response()->json(['status' => 200,'message' => 'API is working fine.']);
+});
 Route::post('/atencion-al-cliente/send', [NewkoolContactsController::class, 'submit']);
 Route::post('/servicio-tecnico/send', [NewkoolContactsController::class, 'service_submit']);
 

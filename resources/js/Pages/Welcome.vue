@@ -104,8 +104,9 @@ const items = ref([
 
 
 
-        <div class="font-main h-24 flex items-center justify-center text-gray-400 font-light text-center">
-            <h2 class="w-11/12">Newkool - Todos los derechos reservados {{ actualYear }}</h2>
+        <div class="font-main h-24 flex flex-col items-center justify-center text-gray-400 font-light text-center">
+            <h2 class="w-11/12">Newkool - J-317393481</h2>
+            <h2 class="w-11/12">Todos los derechos reservados {{ actualYear }}</h2>
 
         </div>
 
